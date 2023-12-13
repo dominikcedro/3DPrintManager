@@ -75,12 +75,20 @@ class LoginActivity : AppCompatActivity() {
                                     "You are logged in successfully",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                // here put db entry
+
                                 val user = hashMapOf(
                                     "password" to password
                                 )
-                                val intent1 = Intent(this@LoginActivity, MenuActivity::class.java)
+                                val intent1 = Intent(this@LoginActivity, PrinterChoiceActivity::class.java)
                                 startActivity(intent1)
+                                finish()
+                            }
+                            else {
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    task.exception!!.message.toString(),
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                         }
                 }}}}}

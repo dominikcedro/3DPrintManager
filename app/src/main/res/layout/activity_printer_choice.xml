@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/easy_grey"
+    tools:context=".PrinterChoiceActivity">
+
+    <Button
+        android:id="@+id/menuPrinterChoiceButton"
+        android:layout_width="367dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
+        android:text="Printer Choice Menu"
+        android:backgroundTint="@color/button_grey"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Printer_1"
+        android:layout_width="369dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="25dp"
+        android:text="Pick Ultimaker 2+"
+        android:backgroundTint="@color/nice_orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuPrinterChoiceButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Printer_2"
+        android:layout_width="369dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
+        android:text="More printers coming soon!"
+        android:backgroundTint="@color/button_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Printer_1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Printer_3"
+        android:layout_width="369dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="64dp"
+        android:text="More printers coming soon!"
+        android:backgroundTint="@color/button_grey"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Printer_2"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

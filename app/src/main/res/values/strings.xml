@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjectManager</string>
+    <string name="check_requests">Check print requests</string>
+    <string name="create_request">Request print</string>
+    <string name="check_reports">Check recent reports</string>
+    <string name="go_printer_choice">Go to printer choice</string>
+    <string name="go_menu">Go back to printer menu</string>
+
 </resources>

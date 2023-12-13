@@ -15,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
         android:text="Printer Name"
+        android:backgroundTint="@color/button_grey"
         app:layout_constraintBottom_toTopOf="@+id/menuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,6 +30,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="16dp"
         android:text="Printer Menu"
+        android:backgroundTint="@color/button_grey"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -37,64 +39,68 @@
 
 
     <Button
-        android:id="@+id/firstOption"
+        android:id="@+id/checkRequestButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
-        android:text="option 1"
-        app:layout_constraintBottom_toTopOf="@+id/secondOption"
+        android:text="@string/check_requests"
+        android:backgroundTint="@color/nice_orange"
+        app:layout_constraintBottom_toTopOf="@+id/createRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/secondOption"
+        android:id="@+id/createRequestButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
-        android:text="option 2"
-        app:layout_constraintBottom_toTopOf="@+id/thirdOption"
+        android:text="@string/create_request"
+        android:backgroundTint="@color/nice_orange"
+        app:layout_constraintBottom_toTopOf="@+id/checkReportsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstOption" />
+        app:layout_constraintTop_toBottomOf="@+id/checkRequestButton" />
 
     <Button
-        android:id="@+id/thirdOption"
+        android:id="@+id/checkReportsButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
-        android:text="option 3"
-        app:layout_constraintBottom_toTopOf="@+id/goBackButton"
+        android:text="@string/check_reports"
+        android:backgroundTint="@color/nice_orange"
+        app:layout_constraintBottom_toTopOf="@+id/goPrinterChoiceButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondOption" />
+        app:layout_constraintTop_toBottomOf="@+id/createRequestButton" />
 
     <Button
-        android:id="@+id/goBackButton"
+        android:id="@+id/goPrinterChoiceButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="32dp"
-        android:text="Go back"
+        android:text="@string/go_printer_choice"
+        android:backgroundTint="@color/nice_orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thirdOption" />
+        app:layout_constraintTop_toBottomOf="@+id/checkReportsButton" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -104,7 +110,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/firstOption"
+        app:layout_constraintBottom_toTopOf="@+id/checkRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuButton"
