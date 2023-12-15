@@ -16,9 +16,6 @@
             android:name=".Printer1Reports"
             android:exported="false" />
         <activity
-            android:name=".Printer_1RequestsActivity"
-            android:exported="false" />
-        <activity
             android:name=".PrinterChoiceActivity"
             android:exported="false" />
         <activity

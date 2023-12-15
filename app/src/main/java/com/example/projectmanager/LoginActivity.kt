@@ -40,11 +40,27 @@ class LoginActivity : AppCompatActivity() {
         spannableString.setSpan(clickableSpan, startIndex, startIndex + clickableWord.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         contactCreator.text = spannableString
         contactCreator.movementMethod = LinkMovementMethod.getInstance()
+//
+        // go to register acitivty spannable string
+        val goRegister = findViewById<TextView>(R.id.tvGoRegister)
+        val fullTextGoRegister = "Not a user? Register here"
+        val clickableWordGoRegister = "Register here"
+        val spannableStringGoRegister = SpannableString(fullTextGoRegister)
+        val startIndexGoRegister = fullTextGoRegister.indexOf(clickableWordGoRegister)
+//        // clicable substring for going into reigsiter activity
+        val clickableSpanGoRegister = object : ClickableSpan(){
+            override fun onClick(widget: View) {
+                val intent5 = Intent(this@LoginActivity, RegisterActivity::class.java)
+                startActivity(intent5)
+            }
+        }
+        spannableStringGoRegister.setSpan(clickableSpanGoRegister, startIndexGoRegister, startIndexGoRegister + clickableWordGoRegister.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        goRegister.text = spannableStringGoRegister
+        goRegister.movementMethod = LinkMovementMethod.getInstance()
 
 
         val loginButton: Button = findViewById<Button>(R.id.login_button)
         loginButton.setOnClickListener {
-            val intent = Intent(this@LoginActivity, Printer1MenuActivity::class.java)
             when{
                 TextUtils.isEmpty(userEmail.text.toString().trim{it <= ' '}) -> {
                     Toast.makeText(
