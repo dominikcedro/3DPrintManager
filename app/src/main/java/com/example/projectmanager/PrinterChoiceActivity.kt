@@ -13,7 +13,7 @@ class PrinterChoiceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_printer_choice)
         val printer1 = findViewById<Button>(R.id.Printer_1) // ultimaker 2+
         printer1.setOnClickListener {
-            val intent = Intent(this@PrinterChoiceActivity, MenuActivity::class.java)
+            val intent = Intent(this@PrinterChoiceActivity, Printer1MenuActivity::class.java)
             startActivity(intent)
         }
 

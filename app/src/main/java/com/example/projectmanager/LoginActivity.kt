@@ -9,15 +9,12 @@ import android.text.SpannableString
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.auth
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
 
         val loginButton: Button = findViewById<Button>(R.id.login_button)
         loginButton.setOnClickListener {
-            val intent = Intent(this@LoginActivity, MenuActivity::class.java)
+            val intent = Intent(this@LoginActivity, Printer1MenuActivity::class.java)
             when{
                 TextUtils.isEmpty(userEmail.text.toString().trim{it <= ' '}) -> {
                     Toast.makeText(
