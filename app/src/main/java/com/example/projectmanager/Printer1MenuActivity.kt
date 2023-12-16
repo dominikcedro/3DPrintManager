@@ -23,5 +23,10 @@ class Printer1MenuActivity : AppCompatActivity() {
         }
 
         // when reportsButton clicked go to reports actiivt
+        reportsButton.setOnClickListener{
+            val intent2 = Intent(this@Printer1MenuActivity, Printer1Reports::class.java)
+            startActivity(intent2)
+            finish()
+        }
     }
 }

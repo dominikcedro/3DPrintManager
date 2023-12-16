@@ -6,29 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".Printer1Reports">
 
+    <EditText
+        android:id="@+id/editTextComment"
+        android:layout_width="339dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <Button
+        android:id="@+id/postTheComment"
+        android:layout_width="164dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="124dp"
+        android:text="post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextComment" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="393dp"
-        android:layout_height="623dp"
+        android:layout_width="391dp"
+        android:layout_height="446dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="29dp"
-        app:layout_constraintBottom_toTopOf="@+id/addNewComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/addNewComment"
-        android:layout_width="370dp"
-        android:layout_height="89dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="14dp"
-        android:text="Here my user will add more comments as he wishes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

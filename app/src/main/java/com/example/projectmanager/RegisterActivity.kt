@@ -1,12 +1,19 @@
 package com.example.projectmanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
+import com.example.projectmanager.Firestore.FireStoreClass
+import com.example.projectmanager.Firestore.FireStoreData
+import com.example.projectmanager.Firestore.User
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,29 +65,40 @@ class RegisterActivity : AppCompatActivity() {
 
         // when register button clicked, register user
         buttonRegister.setOnClickListener{
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail.text.toString(), userPassword1.text.toString())
-                .addOnCompleteListener{
-                    if (it.isSuccessful) {
-                        val user = FirebaseAuth.getInstance().currentUser
-                        user?.sendEmailVerification()
-                            ?.addOnCompleteListener { task ->
-                                if (task.isSuccessful) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    // toast message that it was successful
-                                    Toast.makeText(
-                                        this@RegisterActivity,
-                                        "You are registered successfully",
-                                        Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            this@RegisterActivity,
-                            "Registration failed",
-                            Toast.LENGTH_SHORT).show()
+            val name = userName.text.toString()
+            val email = userEmail.text.toString()
+            val password = userPassword2.text.toString()
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(
+                    OnCompleteListener<AuthResult> { task ->
+                        if (task.isSuccessful) {
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                "You are registered successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            val user = User(
+                                name,
+                                email
+                            )
+                            FireStoreClass().registerUserFS(this@RegisterActivity, user)
+
+
+                            val intent =
+                                Intent(this@RegisterActivity, LoginActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                task.exception!!.message.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
+                )
         }
 
 
