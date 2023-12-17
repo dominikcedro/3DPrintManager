@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.projectmanager.CommentsRecycler.CommentModel
 import com.example.projectmanager.Firestore.CommentData
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +24,7 @@ class Printer1Reports : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_reports)
 
+        // to creae comment using the comment button
         val commentText = findViewById<EditText>(R.id.editTextComment)
         val commentButton = findViewById<Button>(R.id.postTheComment)
         var username:String? = null
@@ -36,8 +38,8 @@ class Printer1Reports : AppCompatActivity() {
                     username = document.getString("name")
                     email = document.getString("email")
                 }
-
-
+            }
+        // post comment, add to firestore comments collection
         commentButton.setOnClickListener {
             val comment = commentText.text.toString()
             val name = username.toString()
@@ -50,10 +52,26 @@ class Printer1Reports : AppCompatActivity() {
                 // API 26 and below
             }
             val commentData = CommentData("Ultimaker 2+", formattedDateTime,name,mail, comment, 0 )
-            db.collection("comments").document(formattedDateTime)
-                    .set(commentData)
-
+            db.collection("comments")
+                .add(commentData)
             }
+        // create array of comments type is CommentModel
+        val comments = ArrayList<CommentModel>()
+        // get comments from firestore
+        db.collection("comments")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val printer = document.getString("printer")
+                    val date = document.getString("date")
+                    val name = document.getString("username")
+                    val mail = document.getString("email")
+                    val comment = document.getString("comment")
+                    val likes = document.getLong("likes")?.toInt()
+                    val commentModel = CommentModel(printer, date, name, mail, comment, likes)
+                    comments.add(commentModel)
+                }
 
     }
+        // function to set
 }}
