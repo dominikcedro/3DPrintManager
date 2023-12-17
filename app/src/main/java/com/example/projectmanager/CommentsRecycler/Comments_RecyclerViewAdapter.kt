@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectmanager.R
 
-class Comments_RecyclerViewAdapter(private val dataSet: ArrayList<CommentModel>) :
+class Comments_RecyclerViewAdapter(var dataSet: ArrayList<CommentModel>) :
     RecyclerView.Adapter<Comments_RecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -6,23 +6,60 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.projectmanager.CommentsRecycler.CommentModel
+import com.example.projectmanager.CommentsRecycler.Comments_RecyclerViewAdapter
 import com.example.projectmanager.Firestore.CommentData
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class Printer1Reports : AppCompatActivity() {
     val db = Firebase.firestore
+    private lateinit var commentsRecyclerView: RecyclerView
+    private lateinit var commentsAdapter: Comments_RecyclerViewAdapter
 
-    @SuppressLint("NewApi")
+    @SuppressLint("NewApi", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_reports)
+        lateinit var commentsRecyclerView: RecyclerView
+        lateinit var commentsAdapter: Comments_RecyclerViewAdapter
+
+        commentsRecyclerView = findViewById(R.id.recyclerView1)
+        commentsRecyclerView.layoutManager = LinearLayoutManager(this)
+        commentsAdapter = Comments_RecyclerViewAdapter(ArrayList<CommentModel>())
+        commentsRecyclerView.adapter = commentsAdapter
+
+
+        Toast.makeText(this, "Fetching data...", Toast.LENGTH_SHORT).show()
+
+        // get comments from firestore
+        db.collection("comments")
+            .get()
+            .addOnSuccessListener { result ->
+                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                val comments = ArrayList<CommentModel>()
+                for (document in result) {
+                    val printer = document.getString("printer")
+                    val date = document.getString("date")
+                    val name = document.getString("username")
+                    val mail = document.getString("email")
+                    val comment = document.getString("comment")
+                    val likes = document.getLong("likes")?.toInt()
+                    val commentModel = CommentModel(printer, date, name, mail, comment, likes)
+                    comments.add(commentModel)
+                }
+                commentsAdapter.dataSet = comments
+                commentsAdapter.notifyDataSetChanged()
+
+
+            }
+
 
         // to creae comment using the comment button
         val commentText = findViewById<EditText>(R.id.editTextComment)
@@ -56,22 +93,6 @@ class Printer1Reports : AppCompatActivity() {
                 .add(commentData)
             }
         // create array of comments type is CommentModel
-        val comments = ArrayList<CommentModel>()
-        // get comments from firestore
-        db.collection("comments")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val printer = document.getString("printer")
-                    val date = document.getString("date")
-                    val name = document.getString("username")
-                    val mail = document.getString("email")
-                    val comment = document.getString("comment")
-                    val likes = document.getLong("likes")?.toInt()
-                    val commentModel = CommentModel(printer, date, name, mail, comment, likes)
-                    comments.add(commentModel)
-                }
 
-    }
         // function to set
 }}

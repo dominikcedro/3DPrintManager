@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Printer1Reports">
 
+
+
     <EditText
         android:id="@+id/editTextComment"
         android:layout_width="339dp"
@@ -17,7 +19,7 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
 
     <Button
         android:id="@+id/postTheComment"
@@ -26,20 +28,25 @@
         android:layout_marginStart="123dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="124dp"
+        android:layout_marginBottom="24dp"
         android:text="post"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextComment" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="391dp"
-        android:layout_height="446dp"
+        android:id="@+id/recyclerView1"
+        android:layout_width="387dp"
+        android:layout_height="420dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
