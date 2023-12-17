@@ -4,19 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/easy_grey"
     tools:context=".Printer1Reports">
 
 
+    <Button
+        android:id="@+id/Printer1ReportsButton"
+        android:layout_width="367dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/button_grey"
+        android:text="Printer Reports"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextComment"
-        android:layout_width="339dp"
-        android:layout_height="124dp"
+        android:layout_width="337dp"
+        android:layout_height="88dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="text"
+
+        app:layout_constraintBottom_toTopOf="@+id/postTheComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
@@ -26,7 +44,6 @@
         android:layout_width="164dp"
         android:layout_height="58dp"
         android:layout_marginStart="123dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="124dp"
         android:layout_marginBottom="24dp"
         android:text="post"
@@ -40,13 +57,13 @@
         android:layout_width="387dp"
         android:layout_height="420dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Printer1ReportsButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

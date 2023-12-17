@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectmanager.CommentsRecycler.CommentModel
@@ -42,7 +43,7 @@ class Printer1Reports : AppCompatActivity() {
         db.collection("comments")
             .get()
             .addOnSuccessListener { result ->
-                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
                 val comments = ArrayList<CommentModel>()
                 for (document in result) {
                     val printer = document.getString("printer")
@@ -54,6 +55,9 @@ class Printer1Reports : AppCompatActivity() {
                     val commentModel = CommentModel(printer, date, name, mail, comment, likes)
                     comments.add(commentModel)
                 }
+                comments.sortWith(compareBy { it.date })
+                commentsAdapter.dataSet = comments
+                commentsAdapter.notifyDataSetChanged()
                 commentsAdapter.dataSet = comments
                 commentsAdapter.notifyDataSetChanged()
 
@@ -64,6 +68,11 @@ class Printer1Reports : AppCompatActivity() {
         // to creae comment using the comment button
         val commentText = findViewById<EditText>(R.id.editTextComment)
         val commentButton = findViewById<Button>(R.id.postTheComment)
+        commentButton.isEnabled = false
+        // if commentText is empty disable button
+        commentText.addTextChangedListener {
+            commentButton.isEnabled = it.toString().isNotEmpty()
+        }
         var username:String? = null
         var email:String? = null
         var formattedDateTime: String = ""
@@ -76,6 +85,7 @@ class Printer1Reports : AppCompatActivity() {
                     email = document.getString("email")
                 }
             }
+
         // post comment, add to firestore comments collection
         commentButton.setOnClickListener {
             val comment = commentText.text.toString()
@@ -91,6 +101,31 @@ class Printer1Reports : AppCompatActivity() {
             val commentData = CommentData("Ultimaker 2+", formattedDateTime,name,mail, comment, 0 )
             db.collection("comments")
                 .add(commentData)
+            db.collection("comments")
+                .get()
+                .addOnSuccessListener { result ->
+//                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                    val comments = ArrayList<CommentModel>()
+                    for (document in result) {
+                        val printer = document.getString("printer")
+                        val date = document.getString("date")
+                        val name = document.getString("username")
+                        val mail = document.getString("email")
+                        val comment = document.getString("comment")
+                        val likes = document.getLong("likes")?.toInt()
+                        val commentModel = CommentModel(printer, date, name, mail, comment, likes)
+                        comments.add(commentModel)
+                    }
+                    comments.sortWith(compareBy { it.date })
+                    commentsAdapter.dataSet = comments
+                    commentsAdapter.notifyDataSetChanged()
+                    commentsAdapter.dataSet = comments
+                    commentsAdapter.notifyDataSetChanged()
+
+
+                }
+            commentText.text.clear()
+
             }
         // create array of comments type is CommentModel
 
