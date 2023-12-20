@@ -6,15 +6,84 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="410dp"
-        android:layout_height="123dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="67dp">
+        android:layout_width="408dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="85dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp" >
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="125dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="32dp"
+                android:text="author"
+                app:layout_constraintEnd_toStartOf="@+id/tvSubject"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSubject"
+                android:layout_width="141dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="8dp"
+                android:text="subject"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvAuthor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRequestStartt"
+                android:layout_width="124dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="date start"
+                app:layout_constraintEnd_toStartOf="@+id/tvRequestEnd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
+
+            <TextView
+                android:id="@+id/tvRequestEnd"
+                android:layout_width="141dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:text="date end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvRequestStartt"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
+
+            <TextView
+                android:id="@+id/tvTotalTime"
+                android:layout_width="128dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:text="total print time"
+                app:layout_constraintEnd_toStartOf="@+id/reminderButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRequestStartt" />
+
+            <Button
+                android:id="@+id/reminderButton"
+                android:layout_width="133dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:text="remind me!"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalTime"
+                app:layout_constraintTop_toBottomOf="@+id/tvRequestEnd" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

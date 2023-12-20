@@ -26,20 +26,20 @@
         android:layout_height="500dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/addRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Printer1RequestsButton" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addRequestButton"
         android:layout_width="247dp"
         android:layout_height="72dp"
         android:layout_marginStart="82dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="82dp"
         android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:text="add request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
