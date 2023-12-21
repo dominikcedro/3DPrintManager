@@ -58,8 +58,6 @@ class Printer1Reports : AppCompatActivity() {
                 comments.sortWith(compareBy { it.date })
                 commentsAdapter.dataSet = comments
                 commentsAdapter.notifyDataSetChanged()
-                commentsAdapter.dataSet = comments
-                commentsAdapter.notifyDataSetChanged()
 
 
             }
