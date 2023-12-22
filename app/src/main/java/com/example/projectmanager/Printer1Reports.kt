@@ -21,8 +21,6 @@ import java.time.format.DateTimeFormatter
 
 class Printer1Reports : AppCompatActivity() {
     val db = Firebase.firestore
-    private lateinit var commentsRecyclerView: RecyclerView
-    private lateinit var commentsAdapter: Comments_RecyclerViewAdapter
 
     @SuppressLint("NewApi", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -115,8 +113,6 @@ class Printer1Reports : AppCompatActivity() {
                         comments.add(commentModel)
                     }
                     comments.sortWith(compareBy { it.date })
-                    commentsAdapter.dataSet = comments
-                    commentsAdapter.notifyDataSetChanged()
                     commentsAdapter.dataSet = comments
                     commentsAdapter.notifyDataSetChanged()
 

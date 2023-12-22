@@ -11,11 +11,9 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>) :
     RecyclerView.Adapter<Requests_RecyclerViewAdapter.ViewHolder>() {
 
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val requestAuthor: TextView = view.findViewById(R.id.tvAuthor)
             val requestSubject: TextView = view.findViewById(R.id.tvSubject)
             val requestStartDate: TextView = view.findViewById(R.id.tvRequestStartt)
             val requestEndDate: TextView = view.findViewById(R.id.tvRequestEnd)
-            val requestTotalTime: TextView = view.findViewById(R.id.tvTotalTime)
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,10 +28,8 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val request = dataSet[position]
-        holder.requestAuthor.text = request.username
         holder.requestSubject.text = request.subject
         holder.requestStartDate.text = request.startDate
         holder.requestEndDate.text = request.endDate
-        holder.requestTotalTime.text = request.totalTime
     }
 }
