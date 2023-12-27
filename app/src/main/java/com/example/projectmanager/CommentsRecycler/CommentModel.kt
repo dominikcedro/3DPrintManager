@@ -7,8 +7,7 @@ class CommentModel {
     var email: String? = null
     var comment: String? = null
     var likes: Int? = null
-
-    constructor() {}
+    
     constructor(printer: String?, date: String?, username: String?, email: String?, comment: String?, likes: Int?) {
         this.printer = printer
         this.date = date

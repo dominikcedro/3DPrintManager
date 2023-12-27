@@ -40,4 +40,7 @@ class Printer1Requests : AppCompatActivity() {
                     val request = RequestModel(subject, startDate, endDate)
                     requests.add(request)
                 }
-}}}
+                requestsAdapter.dataSet = requests
+                requestsAdapter.notifyDataSetChanged()
+            }
+}}
