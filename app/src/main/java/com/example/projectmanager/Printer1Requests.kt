@@ -43,4 +43,11 @@ class Printer1Requests : AppCompatActivity() {
                 requestsAdapter.dataSet = requests
                 requestsAdapter.notifyDataSetChanged()
             }
+
+        val addRequestButton = findViewById<Button>(R.id.addRequestButton)
+        addRequestButton.setOnClickListener(){
+            val intent = Intent(this@Printer1Requests, CreateNewRequest::class.java)
+            startActivity(intent)
+            finish()
+        }
 }}
