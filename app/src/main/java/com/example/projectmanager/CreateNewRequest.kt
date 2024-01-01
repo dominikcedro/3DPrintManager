@@ -39,6 +39,26 @@ class CreateNewRequest : AppCompatActivity() {
             val month = bundle?.getInt("month")
             val year = bundle?.getInt("year")
 
+
+
+            val dateString = if (day != null && month != null && year != null) {
+                "${month + 1}/$day/$year" // month is 0-indexed so we add 1
+            } else {
+                ""
+            }
+
+            when {
+                requestStartDate.text.isEmpty() -> {
+                    requestStartDate.setText(dateString)
+                }
+                requestEndDate.text.isEmpty() -> {
+                    requestEndDate.setText(dateString)
+                }
+                else -> {
+                    Toast.makeText(this, "Both start and end dates are already set.", Toast.LENGTH_SHORT).show()
+                }
+            }
+
             // Add the date to the list
             if (day != null && month != null && year != null) {
                 dates.add(Triple(day, month, year))

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -19,12 +20,20 @@ class DatePickFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_date_pick, container, false)
-
+        val btChooseDate = view.findViewById<Button>(R.id.btChooseDate)
         val datePicker = view.findViewById<DatePicker>(R.id.datePicker)
-
-        val textWhatsupp = view.findViewById<TextView>(R.id.textWhatsupp)
         datePicker.setOnDateChangedListener{ view, year, monthOfYear, dayOfMonth ->
-            textWhatsupp.text = "Year: $year Month: $monthOfYear Day: $dayOfMonth"
+
+        val bundle = Bundle()
+        bundle.putInt("day", datePicker.dayOfMonth)
+        bundle.putInt("month", datePicker.month)
+        bundle.putInt("year", datePicker.year)
+        this.arguments = bundle
+        }
+
+        btChooseDate.setOnClickListener {
+            // Close the fragment
+            fragmentManager?.popBackStack()
         }
         return view
     }
