@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.makeText
 import com.example.projectmanager.DatePickFragment.DatePickFragment
@@ -20,8 +21,8 @@ class CreateNewRequest : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_new_request)
     val requestSub = findViewById<EditText>(R.id.etSubject)
-    val requestStartDate = findViewById<EditText>(R.id.etStartDate)
-    val requestEndDate = findViewById<EditText>(R.id.etEndDate)
+    val requestStartDate = findViewById<TextView>(R.id.etStartDate)
+    val requestEndDate = findViewById<TextView>(R.id.etEndDate)
     val requestFilament = findViewById<EditText>(R.id.etFilament)
         val buttonCreateRequest = findViewById<Button>(R.id.submitRequestButton)
 

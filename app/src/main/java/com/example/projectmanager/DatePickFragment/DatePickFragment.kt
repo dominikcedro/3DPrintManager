@@ -32,8 +32,8 @@ class DatePickFragment : Fragment() {
         }
 
         btChooseDate.setOnClickListener {
-            // Close the fragment
-            fragmentManager?.popBackStack()
+            // hide fragment
+
         }
         return view
     }
