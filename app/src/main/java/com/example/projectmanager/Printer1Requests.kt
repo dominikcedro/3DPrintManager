@@ -8,12 +8,13 @@ import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectmanager.DatePickFragment.RequestDetailsFragment
 import com.example.projectmanager.RequestsDayRecycler.RequestModel
 import com.example.projectmanager.RequestsDayRecycler.Requests_RecyclerViewAdapter
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 
-class Printer1Requests : AppCompatActivity() {
+class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnItemClickListener {
     val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,7 @@ class Printer1Requests : AppCompatActivity() {
 
         requestsRecyclerView = findViewById(R.id.requestsRecyclerView1)
         requestsRecyclerView.layoutManager = LinearLayoutManager(this)
-        requestsAdapter = Requests_RecyclerViewAdapter(ArrayList<RequestModel>())
+        requestsAdapter = Requests_RecyclerViewAdapter(ArrayList<RequestModel>(),this)
         requestsRecyclerView.adapter = requestsAdapter
 
         makeText(this, "Fetching data...", Toast.LENGTH_SHORT).show()
@@ -50,4 +51,15 @@ class Printer1Requests : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-}}
+}
+
+    override fun onItemClick(position: Int) {
+        makeText(this, "blablabla $position", Toast.LENGTH_LONG).show()
+        // open fragment RequestDetailsFragment
+        val detailsFragment = RequestDetailsFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.detailsFragmentContainer, detailsFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+}
