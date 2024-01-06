@@ -54,7 +54,6 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
 }
 
     override fun onItemClick(position: Int) {
-        makeText(this, "blablabla $position", Toast.LENGTH_LONG).show()
         // open fragment RequestDetailsFragment
         val detailsFragment = RequestDetailsFragment()
         val transaction = supportFragmentManager.beginTransaction()

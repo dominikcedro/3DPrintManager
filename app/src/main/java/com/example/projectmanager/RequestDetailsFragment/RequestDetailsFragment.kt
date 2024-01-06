@@ -23,6 +23,11 @@ class RequestDetailsFragment : Fragment() {
         val tvRequestEndDate = view.findViewById<TextView>(R.id.tvRequestEndDate)
         val tvRequestFilament = view.findViewById<TextView>(R.id.tvRequestFilament)
         val btnConfirm = view.findViewById<Button>(R.id.btnConfirm)
+        // retrieve data from bundle and assign to textView
+        val bundle = this.arguments
+        val subject = bundle?.getString("subject")
+        val author = bundle?.getString("author")
+        val startDate = bundle?.getString("startDate")
 
         btnConfirm.setOnClickListener {
             @Suppress("DEPRECATION")
