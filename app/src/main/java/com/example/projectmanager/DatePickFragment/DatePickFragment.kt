@@ -34,7 +34,8 @@ class DatePickFragment : Fragment() {
         }
 
         btChooseDate.setOnClickListener {
-            // hide fragment
+            @Suppress("DEPRECATION")
+            fragmentManager?.beginTransaction()?.remove(this)?.commit()
 
         }
         return view
