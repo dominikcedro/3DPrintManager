@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554513945049",
+    "project_id": "dprintmanager-bc4d2",
+    "storage_bucket": "dprintmanager-bc4d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554513945049:android:9231de9d5c1a9fc2e589c8",
+        "android_client_info": {
+          "package_name": "com.example.projectmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZlbvtJrT2rwyOrMG3bJCk2IVwqpPyulY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
