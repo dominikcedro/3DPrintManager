@@ -16,6 +16,8 @@ import androidx.fragment.app.FragmentTransaction
 
 
 class DatePickFragment : Fragment() {
+    var onDateChosenListener: OnDateChosenListener? = null
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +36,17 @@ class DatePickFragment : Fragment() {
         }
 
         btChooseDate.setOnClickListener {
+            val day = datePicker.dayOfMonth
+            val month = datePicker.month
+            val year = datePicker.year
+            onDateChosenListener?.onDateChosen(day, month, year)
             @Suppress("DEPRECATION")
             fragmentManager?.beginTransaction()?.remove(this)?.commit()
 
         }
         return view
     }
+}
+interface OnDateChosenListener{
+    fun onDateChosen(day: Int, month: Int, year: Int)
 }
