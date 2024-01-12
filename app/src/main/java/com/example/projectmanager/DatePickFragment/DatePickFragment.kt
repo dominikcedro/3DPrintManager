@@ -13,8 +13,10 @@ import androidx.fragment.app.Fragment
 import com.example.projectmanager.R
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.example.projectmanager.TimePickFragment.TimePickFragment
 
 
+@Suppress("DEPRECATION")
 class DatePickFragment : Fragment() {
     var onDateChosenListener: OnDateChosenListener? = null
 
@@ -42,7 +44,11 @@ class DatePickFragment : Fragment() {
             onDateChosenListener?.onDateChosen(day, month, year)
             @Suppress("DEPRECATION")
             fragmentManager?.beginTransaction()?.remove(this)?.commit()
-
+            //
+            val timePickFragment = TimePickFragment()
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.fragmentContainer, timePickFragment)
+                ?.commit()
         }
         return view
     }

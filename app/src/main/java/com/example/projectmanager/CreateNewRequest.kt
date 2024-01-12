@@ -45,7 +45,7 @@ class CreateNewRequest : AppCompatActivity() {
             val datePickFragment = DatePickFragment()
             datePickFragment.onDateChosenListener = object : OnDateChosenListener {
                 override fun onDateChosen(day: Int, month: Int, year: Int) {
-                    val dateString = "${month + 1}/$day/$year" // month is 0-indexed so we add 1
+                    val dateString = "${month + 1}-$day-$year" // month is 0-indexed so add 1
                     requestEndDate.setText(dateString)
                 }
             }
@@ -66,6 +66,7 @@ class CreateNewRequest : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
                 }
+            finish()
         }
     }
 }
