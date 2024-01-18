@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import com.example.projectmanager.R
 
@@ -13,7 +14,20 @@ class TimePickFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_time_pick, container, false)
+        val btChooseTime = view.findViewById<View>(R.id.btChooseTime)
+        val timePicker = view.findViewById<TimePicker>(R.id.requestTimePicker)
 
+
+
+
+
+        btChooseTime.setOnClickListener {
+            val hour = timePicker.hour
+            val minute = timePicker.minute
+            val bundle = Bundle()
+            fragmentManager?.beginTransaction()?.remove(this)?.commit()
+
+        }
 
         return view
     }
