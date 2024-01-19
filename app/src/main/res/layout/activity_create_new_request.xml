@@ -9,27 +9,6 @@
     android:layout_height="match_parent">
 
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="408dp"
-        android:layout_height="726dp"
-        app:layout_constraintBottom_toBottomOf="@+id/createNewRequestLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/createNewRequestLayout"
-        app:layout_constraintTop_toTopOf="@+id/createNewRequestLayout">
-
-    </FrameLayout>
-
-    <android.widget.ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".CreateNewRequest">
-
             <Button
                 android:id="@+id/newRequestButton"
                 android:layout_width="367dp"
@@ -148,8 +127,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etEndTime" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="408dp"
+        android:layout_height="726dp"
+        app:layout_constraintBottom_toBottomOf="@+id/createNewRequestLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/createNewRequestLayout"
+        app:layout_constraintTop_toTopOf="@+id/createNewRequestLayout">
 
-    </android.widget.ScrollView>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

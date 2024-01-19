@@ -10,6 +10,8 @@ import android.widget.Toast
 import com.example.projectmanager.DatePickFragment.DatePickFragment
 import com.example.projectmanager.DatePickFragment.OnDateChosenListener
 import com.example.projectmanager.RequestsDayRecycler.RequestModel
+import com.example.projectmanager.TimePickFragment.OnTimeChosenListener
+import com.example.projectmanager.TimePickFragment.TimePickFragment
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 
@@ -23,6 +25,8 @@ class CreateNewRequest : AppCompatActivity() {
         val requestSub = findViewById<EditText>(R.id.etSubject)
         val requestStartDate = findViewById<TextView>(R.id.etStartDate)
         val requestEndDate = findViewById<TextView>(R.id.etEndDate)
+        val requestStartTime = findViewById<TextView>(R.id.etStartTime)
+        val requestEndTime = findViewById<TextView>(R.id.etEndTime)
         val requestFilament = findViewById<EditText>(R.id.etFilament)
         val buttonCreateRequest = findViewById<Button>(R.id.submitRequestButton)
 
@@ -31,7 +35,7 @@ class CreateNewRequest : AppCompatActivity() {
             val datePickFragment = DatePickFragment()
             datePickFragment.onDateChosenListener = object : OnDateChosenListener {
                 override fun onDateChosen(day: Int, month: Int, year: Int) {
-                    val dateString = "${month + 1}/$day/$year" // month is 0-indexed so we add 1
+                    val dateString = "${month + 1}/$day/$year" // month is 0-indexed so add 1
                     requestStartDate.setText(dateString)
                 }
             }
@@ -39,6 +43,21 @@ class CreateNewRequest : AppCompatActivity() {
                 .replace(R.id.fragmentContainer, datePickFragment)
                 .commit()
         }
+
+        // start time picking
+        requestStartTime.setOnClickListener {
+            val timePickFragment = TimePickFragment()
+            timePickFragment.onTimeChosenListener = object : OnTimeChosenListener {
+                override fun onTimeChosen(hour: Int, minute: Int) {
+                    val timeString = "$hour:$minute"
+                    requestStartTime.setText(timeString)
+                }
+            }
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, timePickFragment)
+                .commit()
+        }
+
 
         // end date picking
         requestEndDate.setOnClickListener {

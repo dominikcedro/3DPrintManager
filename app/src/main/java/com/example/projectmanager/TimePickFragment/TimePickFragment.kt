@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.example.projectmanager.R
 
 class TimePickFragment: Fragment() {
+    var onTimeChosenListener: OnTimeChosenListener? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,4 +33,7 @@ class TimePickFragment: Fragment() {
 
         return view
     }
+}
+interface OnTimeChosenListener{
+    fun onTimeChosen(hour: Int, minute: Int)
 }
