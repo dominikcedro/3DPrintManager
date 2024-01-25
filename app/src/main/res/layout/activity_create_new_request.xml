@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/createNewRequestLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/easy_grey">
 
 
             <Button
@@ -22,75 +23,102 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/etStartDate"
-                android:layout_width="276dp"
-                android:layout_height="61dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="67dp"
-                android:ems="10"
-                android:text="Starting date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.541"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFilament" />
+    <TextView
+        android:id="@+id/etStartDate"
+        android:layout_width="276dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="67dp"
+        android:ems="10"
+        android:text="Starting date"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFilament" />
 
-            <TextView
-                android:id="@+id/etStartTime"
-                android:layout_width="275dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="68dp"
-                android:ems="10"
-                android:text="Start Time"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.541"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStartDate" />
+    <TextView
+        android:id="@+id/etStartTime"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:text="Start Time"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStartDate" />
 
-            <TextView
-                android:id="@+id/etEndDate"
-                android:layout_width="275dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="68dp"
-                android:ems="10"
-                android:text="End Date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.541"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStartTime" />
+    <TextView
+        android:id="@+id/etEndDate"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:text="End Date"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStartTime" />
 
-            <TextView
-                android:id="@+id/etEndTime"
-                android:layout_width="275dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="68dp"
-                android:ems="10"
-                android:text="End Time"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEndDate" />
+    <TextView
+        android:id="@+id/etEndTime"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:text="End Time"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEndDate" />
 
-            <EditText
-                android:id="@+id/etSubject"
-                android:layout_width="275dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="68dp"
-                android:ems="10"
-                android:hint="Subject of print"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newRequestButton" />
+    <EditText
+        android:id="@+id/etSubject"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:hint="Subject of print"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:inputType="text"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newRequestButton" />
 
             <Button
                 android:id="@+id/submitRequestButton"
@@ -105,36 +133,46 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailNotiSwitch" />
 
-            <EditText
-                android:id="@+id/etFilament"
-                android:layout_width="277dp"
-                android:layout_height="59dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:hint="Filament choice"
-                android:inputType="text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etSubject" />
+    <EditText
+        android:id="@+id/etFilament"
+        android:layout_width="277dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Filament choice"
+        android:background="@drawable/rounded_text_field_disabled"
+        android:paddingLeft="10dp"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSubject" />
 
-            <Switch
-                android:id="@+id/emailNotiSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="106dp"
-                android:layout_marginTop="18dp"
-                android:text="Notify me at end of print"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEndTime" />
+    <Switch
+        android:id="@+id/emailNotiSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="18dp"
+        android:text="Notify me at end of print"
+
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEndTime" />
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="408dp"
-        android:layout_height="726dp"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="210dp"
         app:layout_constraintBottom_toBottomOf="@+id/createNewRequestLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/createNewRequestLayout"
-        app:layout_constraintTop_toTopOf="@+id/createNewRequestLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 

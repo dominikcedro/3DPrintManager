@@ -3,6 +3,8 @@ package com.example.projectmanager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -35,6 +37,28 @@ class CreateNewRequest : AppCompatActivity() {
         var startDateTime: DateTime? = null
         var endDateTime: DateTime? = null
 
+        // background change for buttons when clicked
+        val textFields = arrayOf(requestSub, requestStartDate, requestEndDate, requestStartTime, requestEndTime, requestFilament)
+
+        for (field in textFields) {
+            field.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                    // No action needed here
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    // No action needed here
+                }
+
+                override fun afterTextChanged(s: Editable) {
+                    if (s.toString().isNotEmpty()) {
+                        field.setBackgroundResource(R.drawable.rounded_text_field_active)
+                    } else {
+                        field.setBackgroundResource(R.drawable.rounded_text_field_disabled)
+                    }
+                }
+            })
+        }
 
         // start date picking
         requestStartDate.setOnClickListener {
