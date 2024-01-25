@@ -45,10 +45,10 @@ class DatePickFragment : Fragment() {
             @Suppress("DEPRECATION")
             fragmentManager?.beginTransaction()?.remove(this)?.commit()
             //
-            val timePickFragment = TimePickFragment()
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.fragmentContainer, timePickFragment)
-                ?.commit()
+//            val timePickFragment = TimePickFragment()
+//            fragmentManager?.beginTransaction()
+//                ?.replace(R.id.fragmentContainer, timePickFragment)
+//                ?.commit()
         }
         return view
     }
