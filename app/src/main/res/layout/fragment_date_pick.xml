@@ -8,15 +8,15 @@
     android:background="@color/easy_grey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="594dp"
         tools:layout_editor_absoluteX="1dp">
 
         <DatePicker
             android:id="@+id/datePicker"
-            android:layout_width="412dp"
+            android:layout_width="339dp"
 
-            android:layout_height="566dp"
+            android:layout_height="422dp"
             android:layout_marginStart="31dp"
             android:layout_marginEnd="31dp"
             android:theme="@style/DatePickerTheme"
@@ -33,6 +33,7 @@
             android:layout_marginStart="109dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="110dp"
+            android:backgroundTint="@color/nice_orange"
             android:text="Choose date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

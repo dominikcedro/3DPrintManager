@@ -1,6 +1,6 @@
 package com.example.projectmanager
 
-import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.projectmanager.DatePickFragment.DatePickFragment
 import com.example.projectmanager.DatePickFragment.OnDateChosenListener
 import com.example.projectmanager.DateTimeOperation.DateTime
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.firestore
 class CreateNewRequest : AppCompatActivity() {
     val db = Firebase.firestore
     val dates = mutableListOf<Triple<Int, Int, Int>>()
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_new_request)
@@ -43,11 +45,11 @@ class CreateNewRequest : AppCompatActivity() {
         for (field in textFields) {
             field.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                    // No action needed here
+                    // nothing
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                    // No action needed here
+                    // nothing
                 }
 
                 override fun afterTextChanged(s: Editable) {
