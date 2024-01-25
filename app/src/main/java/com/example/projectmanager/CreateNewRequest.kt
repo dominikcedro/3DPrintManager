@@ -18,7 +18,6 @@ import com.google.firebase.firestore.firestore
 class CreateNewRequest : AppCompatActivity() {
     val db = Firebase.firestore
     val dates = mutableListOf<Triple<Int, Int, Int>>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_new_request)
@@ -44,19 +43,6 @@ class CreateNewRequest : AppCompatActivity() {
                 .commit()
         }
 
-        // start time picking
-        requestStartTime.setOnClickListener {
-            val timePickFragment = TimePickFragment()
-            timePickFragment.onTimeChosenListener = object : OnTimeChosenListener {
-                override fun onTimeChosen(hour: Int, minute: Int) {
-                    val timeString = "$hour:$minute"
-                    requestStartTime.setText(timeString)
-                }
-            }
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, timePickFragment)
-                .commit()
-        }
 
 
         // end date picking
@@ -73,11 +59,14 @@ class CreateNewRequest : AppCompatActivity() {
                 .commit()
         }
 
+
+
         buttonCreateRequest.setOnClickListener {
             val subject = requestSub.text.toString()
             val startDate = requestStartDate.text.toString()
             val endDate = requestEndDate.text.toString()
             val filament = requestFilament.text.toString()
+
             val request = RequestModel(subject, startDate, endDate)
             db.collection("requests")
                 .document()

@@ -21,12 +21,10 @@ class TimePickFragment: Fragment() {
 
 
 
-
-
         btChooseTime.setOnClickListener {
             val hour = timePicker.hour
             val minute = timePicker.minute
-            val bundle = Bundle()
+            onTimeChosenListener?.onTimeChosen(hour, minute)
             fragmentManager?.beginTransaction()?.remove(this)?.commit()
 
         }
