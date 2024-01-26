@@ -34,5 +34,11 @@ class Printer1MenuActivity : AppCompatActivity() {
             startActivity(intent3)
             finish()
         }
+        requestsCreateButton.setOnClickListener{
+            val intent4 = Intent(this@Printer1MenuActivity, CreateNewRequest::class.java)
+            startActivity(intent4)
+            finish()
+        }
+
     }
 }
