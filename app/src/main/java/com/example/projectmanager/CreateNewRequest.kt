@@ -151,16 +151,18 @@ class CreateNewRequest : AppCompatActivity() {
             }
             val subject = requestSub.text.toString()
             val startDate = requestStartDate.text.toString()
+            val startTime = requestStartTime.text.toString()
             val endDate = requestEndDate.text.toString()
+            val endTime = requestEndTime.text.toString()
             val filament = requestFilament.text.toString()
 
-            val request = RequestModel(subject, startDate, endDate)
-//            db.collection("requests")
-//                .document()
-//                .set(request)
-//                .addOnSuccessListener {
-//                    Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
-//                }
+            val request = RequestModel(subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime)
+            db.collection("requests")
+                .document()
+                .set(request)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
+                }
             finish()
         }
     }

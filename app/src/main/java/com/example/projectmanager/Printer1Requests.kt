@@ -37,8 +37,13 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
                 for (document in result) {
                     val subject = document.getString("subject")
                     val startDate = document.getString("startDate")
+                    val starTime = document.getString("startTime")
                     val endDate = document.getString("endDate")
-                    val request = RequestModel(subject, startDate, endDate)
+                    val endTime = document.getString("endTime")
+                    val filament = document.getString("filament")
+                    val startDateTime = document.get("startDateTime")
+                    val endDateTime = document.get("endDateTime")
+                    val request = RequestModel(subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime)
                     requests.add(request)
                 }
                 requestsAdapter.dataSet = requests
