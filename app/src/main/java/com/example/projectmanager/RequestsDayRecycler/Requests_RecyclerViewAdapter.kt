@@ -18,6 +18,7 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>,
             val requestStartDate: TextView = view.findViewById(R.id.tvRequestStartt)
             val requestEndDate: TextView = view.findViewById(R.id.tvRequestEnd)
             val detailsButton: Button = view.findViewById<Button>(R.id.detailsButton)
+            val requestAuthor: TextView = view.findViewById(R.id.tvAuthor)
         init{
             detailsButton.setOnClickListener(this)
         }
@@ -47,5 +48,6 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>,
         holder.requestStartDate.text = request.startDate
         holder.requestEndDate.text = request.endDate
         holder.detailsButton.text = "More details"
+        holder.requestAuthor.text = request.author
     }
 }

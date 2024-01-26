@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="405dp"
-        android:layout_height="120dp"
+        android:layout_height="137dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,80 +18,83 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="410dp"
-            android:layout_height="123dp"
-            android:background="@color/calm_blue">
+            android:layout_width="413dp"
+            android:layout_height="140dp"
+            android:background="@color/button_grey">
 
             <TextView
                 android:id="@+id/tvAuthor"
-                android:layout_width="125dp"
+                android:layout_width="173dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:text="author"
+                android:textAlignment="textStart"
                 android:textColor="@color/text_color"
-                app:layout_constraintEnd_toStartOf="@+id/tvSubject"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvSubject"
-                android:layout_width="141dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="186dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="subject"
+                android:textAlignment="textEnd"
                 android:textColor="@color/text_color"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvAuthor"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvRequestStartt"
-                android:layout_width="124dp"
-                android:layout_height="29dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_width="178dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
                 android:text="date start"
+                android:textAlignment="textStart"
                 android:textColor="@color/text_color"
-                app:layout_constraintEnd_toStartOf="@+id/tvRequestEnd"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
 
             <TextView
                 android:id="@+id/tvRequestEnd"
-                android:layout_width="141dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="186dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="16dp"
                 android:text="date end"
+                android:textAlignment="textEnd"
                 android:textColor="@color/text_color"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvRequestStartt"
                 app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
 
             <Button
                 android:id="@+id/reminderButton"
-                android:layout_width="136dp"
+                android:layout_width="166dp"
                 android:layout_height="45dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+
+                android:backgroundTint="@color/calm_blue"
                 android:text="remind me!"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRequestEnd" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
                 android:id="@+id/detailsButton"
-                android:layout_width="125dp"
-                android:layout_height="37dp"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="4dp"
+                android:backgroundTint="@color/calm_blue"
                 android:text="details"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/reminderButton"
-                app:layout_constraintHorizontal_bias="0.225"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

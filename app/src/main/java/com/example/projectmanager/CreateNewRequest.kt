@@ -17,6 +17,7 @@ import com.example.projectmanager.RequestsDayRecycler.RequestModel
 import com.example.projectmanager.TimePickFragment.OnTimeChosenListener
 import com.example.projectmanager.TimePickFragment.TimePickFragment
 import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 
 class CreateNewRequest : AppCompatActivity() {
@@ -149,19 +150,28 @@ class CreateNewRequest : AppCompatActivity() {
                 Toast.makeText(this, "Please enter valid information", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val subject = requestSub.text.toString()
-            val startDate = requestStartDate.text.toString()
-            val startTime = requestStartTime.text.toString()
-            val endDate = requestEndDate.text.toString()
-            val endTime = requestEndTime.text.toString()
-            val filament = requestFilament.text.toString()
+            // gate name from usersData collection in firebase based on current users email
+            db.collection("usersData")
+                .document(Firebase.auth.currentUser!!.uid)
+                .get()
+                .addOnSuccessListener { result ->
+                    val name = result.getString("name")
+                    val email = result.getString("email")
 
-            val request = RequestModel(subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime)
-            db.collection("requests")
-                .document()
-                .set(request)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
+                    val subject = requestSub.text.toString()
+                    val startDate = requestStartDate.text.toString()
+                    val startTime = requestStartTime.text.toString()
+                    val endDate = requestEndDate.text.toString()
+                    val endTime = requestEndTime.text.toString()
+                    val filament = requestFilament.text.toString()
+
+                    val request = RequestModel(subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime,name)
+                    db.collection("requests")
+                        .document()
+                        .set(request)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
+                        }
                 }
             finish()
         }

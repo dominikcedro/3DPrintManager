@@ -11,11 +11,16 @@ import com.example.projectmanager.Firestore.FireStoreClass
 import com.example.projectmanager.Firestore.FireStoreData
 import com.example.projectmanager.Firestore.User
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.Firebase
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
+import java.lang.reflect.Array.set
 
 class RegisterActivity : AppCompatActivity() {
+    val db = Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -73,19 +78,23 @@ class RegisterActivity : AppCompatActivity() {
                     OnCompleteListener<AuthResult> { task ->
                         if (task.isSuccessful) {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
-                            Toast.makeText(
-                                this@RegisterActivity,
-                                "You are registered successfully",
-                                Toast.LENGTH_SHORT
-                            ).show()
+//                            Toast.makeText(
+//                                this@RegisterActivity,
+//                                "You are registered successfully",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
 
                             val user = User(
                                 name,
                                 email
                             )
                             FireStoreClass().registerUserFS(this@RegisterActivity, user)
-
-
+                            db.collection("usersData")
+                                .document(Firebase.auth.currentUser!!.uid)
+                                .set(user)
+                                .addOnSuccessListener {
+                                    Toast.makeText(this, "User added successfully", Toast.LENGTH_SHORT).show()
+                                }
                             val intent =
                                 Intent(this@RegisterActivity, LoginActivity::class.java)
                             startActivity(intent)

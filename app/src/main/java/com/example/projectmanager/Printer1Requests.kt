@@ -35,6 +35,7 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
             .addOnSuccessListener { result ->
                 val requests = ArrayList<RequestModel>()
                 for (document in result) {
+                    val author = document.getString("author")
                     val subject = document.getString("subject")
                     val startDate = document.getString("startDate")
                     val starTime = document.getString("startTime")
@@ -43,7 +44,7 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
                     val filament = document.getString("filament")
                     val startDateTime = document.get("startDateTime")
                     val endDateTime = document.get("endDateTime")
-                    val request = RequestModel(subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime)
+                    val request = RequestModel(subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime, author)
                     requests.add(request)
                 }
                 requestsAdapter.dataSet = requests

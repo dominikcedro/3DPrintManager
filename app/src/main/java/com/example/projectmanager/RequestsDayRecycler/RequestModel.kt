@@ -3,6 +3,7 @@ package com.example.projectmanager.RequestsDayRecycler
 import com.example.projectmanager.DateTimeOperation.DateTime
 
 class RequestModel {
+    var author: String? = null
     var subject: String? = null
     var startDate: String? = null
     var startTime: String? = null
@@ -15,9 +16,9 @@ class RequestModel {
     constructor(
         subject: String?, startDate: String?, endDate: String?,
         startTime: String?, endTime: String?, filament: String?,
-        startDateTime: Any?, endDateTime: Any?
+        startDateTime: Any?, endDateTime: Any?, author: String?
     ) {
-
+        this.author = author
         this.subject = subject
         this.startDate = startDate
         this.endDate = endDate
