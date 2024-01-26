@@ -3,20 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
 
-       <androidx.cardview.widget.CardView
-        android:layout_width="408dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="85dp"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="2dp" >
+    <androidx.cardview.widget.CardView
+        android:layout_width="405dp"
+        android:layout_height="120dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="410dp"
+            android:layout_height="123dp"
+            android:background="@color/calm_blue">
 
             <TextView
                 android:id="@+id/tvAuthor"
@@ -26,6 +30,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="32dp"
                 android:text="author"
+                android:textColor="@color/text_color"
                 app:layout_constraintEnd_toStartOf="@+id/tvSubject"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +43,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
                 android:text="subject"
+                android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvAuthor"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +55,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="32dp"
                 android:text="date start"
+                android:textColor="@color/text_color"
                 app:layout_constraintEnd_toStartOf="@+id/tvRequestEnd"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
@@ -60,28 +67,31 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="8dp"
                 android:text="date end"
+                android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvRequestStartt"
                 app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
 
             <Button
                 android:id="@+id/reminderButton"
-                android:layout_width="133dp"
-                android:layout_height="35dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="136dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="36dp"
                 android:text="remind me!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvRequestEnd" />
 
             <Button
                 android:id="@+id/detailsButton"
-                android:layout_width="139dp"
-                android:layout_height="33dp"
+                android:layout_width="125dp"
+                android:layout_height="37dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="24dp"
+                android:layout_marginBottom="12dp"
                 android:text="details"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/reminderButton"
+                app:layout_constraintHorizontal_bias="0.225"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
