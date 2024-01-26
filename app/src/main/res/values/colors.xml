@@ -2,14 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="easy_grey">#3C3F41</color>
-    <color name="button_grey">#858585</color>
-    <color name="text_color">#FFE4DEDE</color>
-    <color name="nice_orange">#BB5A2B</color>
-    <color name="nice_orange_dark">#A44A2B</color>
-    <color name="calm_blue">#2B5AA4</color>
-    <color name="calm_blue_dark">#2B4AA4</color>
-    <color name="fast_green">#0BBA74</color>
 
     <color name="dark_blue">#112B3C</color>
     <color name="lighter_blue">#205375</color>

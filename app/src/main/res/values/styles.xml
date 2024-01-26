@@ -2,16 +2,16 @@
 <resources>
 
     <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/nice_orange</item>
-        <item name="android:textColorPrimary">@color/text_color</item>
-        <item name="android:textColorSecondary">@color/text_color</item>
+        <item name="colorAccent">@color/lighter_blue</item>
+        <item name="android:textColorPrimary">@color/white_cool</item>
+        <item name="android:textColorSecondary">@color/white_cool</item>
 
     </style>
 
     <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-            <item name="colorAccent">@color/nice_orange</item>
-        <item name="android:textColorPrimary">@color/text_color</item>
-        <item name="android:textColorSecondary">@color/text_color</item>
+            <item name="colorAccent">@color/lighter_blue</item>
+        <item name="android:textColorPrimary">@color/white_cool</item>
+        <item name="android:textColorSecondary">@color/white_cool</item>
 
     </style>
 
