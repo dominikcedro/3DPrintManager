@@ -6,4 +6,15 @@
     <string name="go_printer_choice">Go to printer choice</string>
     <string name="go_menu">Go back to printer menu</string>
 
+    <string name="lbSubject"><u>Subject of the print</u></string>
+    <string name="lbAuthor"><u>Author of the print</u></string>
+    <string name="lbFilament"><u>Filament used</u></string>
+    <string name="lbStartTime"><u>Start time</u></string>
+    <string name="lbStartDate"><u>Start date</u></string>
+    <string name="lbEndTime"><u>End time</u></string>
+    <string name="lbEndDate"><u>End date</u></string>
+    <string name="lbStatus"><u>Status</u></string>
+    <string name="lbPrinter"><u>Printer</u></string>
+    <string name="lbDuration"><u>Duration</u></string>
+
 </resources>

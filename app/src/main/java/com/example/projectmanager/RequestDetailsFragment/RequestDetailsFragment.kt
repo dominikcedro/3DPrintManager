@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.projectmanager.R
+import java.text.SimpleDateFormat
+import java.util.Calendar
 
 
 class RequestDetailsFragment : Fragment() {
@@ -25,6 +27,9 @@ class RequestDetailsFragment : Fragment() {
         val btnConfirm = view.findViewById<Button>(R.id.btnConfirm)
         val tvRequestStartTIme = view.findViewById<TextView>(R.id.tvRequestStartTime)
         val tvRequestEndTime = view.findViewById<TextView>(R.id.tvRequestEndTime)
+        //
+        val tvRequestDayStart = view.findViewById<TextView>(R.id.tvRequestDayStart)
+        val tvRequestDayEnd = view.findViewById<TextView>(R.id.tvRequestDayEnd)
         // retrieve data from bundle and assign to textView
         val bundle = this.arguments
         val documentId = bundle?.getString("documentId")
@@ -35,6 +40,13 @@ class RequestDetailsFragment : Fragment() {
         val startTime = bundle?.getString("startTime")
         val endTime = bundle?.getString("endTime")
         val filament = bundle?.getString("filament")
+        //
+        //
+        val weekDayStart = getWeekDay(startDate.toString())
+        val weekDayEnd = getWeekDay(endDate.toString())
+        //
+        //
+        //
 
 
         tvRequestSubject.text = subject
@@ -44,12 +56,31 @@ class RequestDetailsFragment : Fragment() {
         tvRequestFilament.text = filament
         tvRequestStartTIme.text = startTime
         tvRequestEndTime.text = endTime
+        tvRequestDayStart.text = weekDayStart
+        tvRequestDayEnd.text = weekDayEnd
 //
         btnConfirm.setOnClickListener {
             @Suppress("DEPRECATION")
             fragmentManager?.beginTransaction()?.remove(this)?.commit()
         }
         return view
+    }
+    fun getWeekDay(date: String): String {
+        val sdf = SimpleDateFormat("MM-dd-yyyy")
+        val d = sdf.parse(date)
+        val calendar = Calendar.getInstance()
+        calendar.time = d
+        val day = calendar[Calendar.DAY_OF_WEEK]
+        return when (day) {
+            Calendar.MONDAY -> "Monday"
+            Calendar.TUESDAY -> "Tuesday"
+            Calendar.WEDNESDAY -> "Wednesday"
+            Calendar.THURSDAY -> "Thursday"
+            Calendar.FRIDAY -> "Friday"
+            Calendar.SATURDAY -> "Saturday"
+            Calendar.SUNDAY -> "Sunday"
+            else -> ""
+        }
     }
 }
 

@@ -8,4 +8,11 @@
     <color name="nice_orange">#BB5A2B</color>
     <color name="nice_orange_dark">#A44A2B</color>
     <color name="calm_blue">#2B5AA4</color>
+    <color name="calm_blue_dark">#2B4AA4</color>
+    <color name="fast_green">#0BBA74</color>
+
+    <color name="dark_blue">#112B3C</color>
+    <color name="lighter_blue">#205375</color>
+    <color name="orange">#f66b0e</color>
+    <color name="white_cool">#efefef</color>
 </resources>
