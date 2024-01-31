@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_blue"
+    android:background="@color/DarkBackgroundColor"
     tools:context=".Printer1Requests">
 
     <Button
@@ -14,7 +14,7 @@
         android:layout_marginStart="22dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="22dp"
-        android:backgroundTint="@color/lighter_blue"
+        android:backgroundTint="@color/DarkFrontColor"
         android:text="Printer Requests"
         app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="82dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/DarkSpecialColor"
         android:text="add request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

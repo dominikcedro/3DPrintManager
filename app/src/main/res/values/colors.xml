@@ -3,8 +3,19 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="dark_blue">#112B3C</color>
-    <color name="lighter_blue">#205375</color>
-    <color name="orange">#f66b0e</color>
-    <color name="white_cool">#efefef</color>
+    <color name="DarkBackgroundColor">#112B3C</color>
+    <color name="DarkFrontColor">#205375</color>
+    <color name="DarkMiddleColor">#18394E</color>
+    <color name="DarkSpecialColor">#AD4D0C</color>
+    <color name="DarkBasicTextColor">#efefef</color>
+    <color name="DarkExtraTextColor">#130D0D</color>
+
+    <color name="LightBackgroundColor">#F9F5E7</color>
+    <color name="LightFrontColor">#F8EAD8</color>
+    <color name="LightMiddleColor">#EDDBC7</color>
+    <color name="LightSpecialColor">#A7727D</color>
+    <color name="LightBasicTextColor">#0C0C0C</color>
+    <color name="LightExtraTextColor">#F3DDDD</color>
+
+
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_blue"
+    android:background="@color/DarkBackgroundColor"
     tools:context=".RegisterActivity">
 
     <ImageView
@@ -27,7 +27,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="11dp"
         android:text="Password should be at least 6 characters long and include special character. Please try not to forget it!"
-        android:textColor="@color/white_cool"
+        android:textColor="@color/DarkBasicTextColor"
         android:textAlignment="center"
         android:gravity="center"
         android:background="@drawable/section_field_color"
@@ -45,7 +45,7 @@
         android:ems="10"
         android:hint="Your student email:"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/white_cool"
+        android:textColorHint="@color/DarkBasicTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
@@ -60,7 +60,7 @@
         android:ems="10"
         android:hint="Your password"
         android:inputType="textPassword"
-        android:textColorHint="@color/white_cool"
+        android:textColorHint="@color/DarkBasicTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
@@ -75,7 +75,7 @@
         android:ems="10"
         android:hint="Repeat password"
         android:inputType="textPassword"
-        android:textColorHint="@color/white_cool"
+        android:textColorHint="@color/DarkBasicTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword1" />
@@ -90,7 +90,7 @@
         android:ems="10"
         android:hint="Your name/ nickname"
         android:inputType="text"
-        android:textColorHint="@color/white_cool"
+        android:textColorHint="@color/DarkBasicTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -103,7 +103,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/DarkSpecialColor"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="66dp"
         android:text="I agree, that Dominik is a good programmer"
-        android:textColor="@color/white_cool"
+        android:textColor="@color/DarkBasicTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword2" />

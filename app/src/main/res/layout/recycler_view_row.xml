@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@color/lighter_blue"
+            android:background="@color/DarkFrontColor"
 
             android:layout_height="match_parent">
 
@@ -31,7 +31,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:text="Comment body"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/commentAuthor" />
@@ -42,7 +42,7 @@
                 android:layout_height="31dp"
                 android:layout_marginEnd="24dp"
                 android:text="Date of comment"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/commentAuthor"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +53,7 @@
                 android:layout_height="29dp"
                 android:layout_marginStart="24dp"
                 android:text="Author of the comment"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,7 +63,7 @@
                 android:layout_height="49dp"
                 android:layout_marginStart="2dp"
                 android:text="+"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/DarkSpecialColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/commentBody" />
@@ -76,7 +76,7 @@
                 android:gravity="center_vertical"
                 android:text="123"
                 android:textAlignment="center"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/likeButton"

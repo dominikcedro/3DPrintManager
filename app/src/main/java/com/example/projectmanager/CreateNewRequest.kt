@@ -55,9 +55,9 @@ class CreateNewRequest : AppCompatActivity() {
 
                 override fun afterTextChanged(s: Editable) {
                     if (s.toString().isNotEmpty()) {
-                        field.setBackgroundResource(R.drawable.rounded_text_field_active)
+                        field.setBackgroundResource(R.drawable.section_field_color)
                     } else {
-                        field.setBackgroundResource(R.drawable.rounded_text_field_disabled)
+                        field.setBackgroundResource(R.drawable.section_middle_color)
                     }
                 }
             })

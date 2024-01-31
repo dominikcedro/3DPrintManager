@@ -2,17 +2,19 @@
 <resources>
 
     <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/lighter_blue</item>
-        <item name="android:textColorPrimary">@color/white_cool</item>
-        <item name="android:textColorSecondary">@color/white_cool</item>
+        <item name="colorAccent">@color/DarkFrontColor</item>
+        <item name="android:textColorPrimary">@color/DarkBasicTextColor</item>
+        <item name="android:textColorSecondary">@color/DarkBasicTextColor</item>
 
     </style>
 
     <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-            <item name="colorAccent">@color/lighter_blue</item>
-        <item name="android:textColorPrimary">@color/white_cool</item>
-        <item name="android:textColorSecondary">@color/white_cool</item>
+            <item name="colorAccent">@color/DarkFrontColor</item>
+        <item name="android:textColorPrimary">@color/DarkBasicTextColor</item>
+        <item name="android:textColorSecondary">@color/DarkBasicTextColor</item>
 
     </style>
+
+
 
 </resources>

@@ -20,12 +20,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="415dp"
             android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:background="@color/DarkMiddleColor">
 
             <TextView
                 android:id="@+id/tvAuthor"
-                android:layout_width="167dp"
-                android:layout_height="37dp"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/section_field_color"
@@ -33,7 +33,7 @@
                 android:paddingLeft="10dp"
                 android:text="author"
                 android:textAlignment="textStart"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
 
             <TextView
                 android:id="@+id/tvSubject"
-                android:layout_width="184dp"
-                android:layout_height="36dp"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/section_field_color"
@@ -50,15 +50,15 @@
                 android:paddingRight="10dp"
                 android:text="subject"
                 android:textAlignment="textEnd"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvRequestStartt"
-                android:layout_width="172dp"
-                android:layout_height="39dp"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/section_field_color"
@@ -66,15 +66,15 @@
                 android:paddingLeft="10dp"
                 android:text="date start"
                 android:textAlignment="textStart"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
 
             <TextView
                 android:id="@+id/tvRequestEnd"
-                android:layout_width="186dp"
-                android:layout_height="37dp"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/section_field_color"
@@ -82,19 +82,19 @@
                 android:paddingRight="10dp"
                 android:text="date end"
                 android:textAlignment="textEnd"
-                android:textColor="@color/white_cool"
+                android:textColor="@color/DarkBasicTextColor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
 
             <Button
                 android:id="@+id/reminderButton"
-                android:layout_width="166dp"
+                android:layout_width="170dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="4dp"
 
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/DarkSpecialColor"
                 android:text="remind me!"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -105,7 +105,7 @@
                 android:layout_height="45dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="4dp"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/DarkSpecialColor"
                 android:text="details"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
