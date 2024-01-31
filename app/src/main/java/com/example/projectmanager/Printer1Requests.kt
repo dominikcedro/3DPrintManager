@@ -47,9 +47,11 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
                     val startDateTime = document.get("startDateTime")
                     val endDateTime = document.get("endDateTime")
                     val currentDate = document.getTimestamp("postDate")
+                    val startDateTimestamp = document.getTimestamp("startTimestamp")
 
 
-                    val request = RequestModel(author, subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime, currentDate)
+                    val request = RequestModel(author, subject, startDate, endDate, starTime,
+                        endTime, filament, startDateTime, endDateTime, currentDate, startDateTimestamp)
                     requests.add(request)
                 }
                 requests.sortBy { it.postDate }

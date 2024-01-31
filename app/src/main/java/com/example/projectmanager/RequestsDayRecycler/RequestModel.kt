@@ -14,11 +14,12 @@ class RequestModel {
     var startDateTime: Any? = null
     var endDateTime: Any? = null
     var postDate: Timestamp? = null
+    var startTimestamp: Timestamp? = null
 
     constructor(
         author: String?, subject: String?, startDate: String?, endDate: String?,
         startTime: String?, endTime: String?, filament: String?, startDateTime: Any?,
-        endDateTime: Any?, postDate: Timestamp?
+        endDateTime: Any?, postDate: Timestamp?, startTimestamp: Timestamp?
     ) {
         this.author = author
         this.subject = subject
@@ -30,6 +31,7 @@ class RequestModel {
         this.startDateTime = startDateTime
         this.endDateTime = endDateTime
         this.postDate = postDate
+        this.startTimestamp = startTimestamp
 
     }
 }

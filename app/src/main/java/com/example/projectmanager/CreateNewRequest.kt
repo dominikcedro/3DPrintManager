@@ -20,6 +20,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
+import java.util.Calendar
 
 class CreateNewRequest : AppCompatActivity() {
     val db = Firebase.firestore
@@ -166,8 +167,10 @@ class CreateNewRequest : AppCompatActivity() {
                     val endTime = requestEndTime.text.toString()
                     val filament = requestFilament.text.toString()
                     val currentTimestamp = Timestamp.now()
+                    val startTimestamp = if (startDateTime != null) dateTimeToTimestamp(startDateTime) else null
 
-                    val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp)
+
+                    val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp, startTimestamp)
                     db.collection("requests")
                         .document()
                         .set(request)
@@ -237,6 +240,17 @@ class CreateNewRequest : AppCompatActivity() {
 
         return null
     }
+    fun dateTimeToTimestamp(dateTime: DateTime): Timestamp {
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.DAY_OF_MONTH, dateTime.day)
+        calendar.set(Calendar.MONTH, dateTime.month - 1) // Calendar.MONTH is 0-based
+        calendar.set(Calendar.YEAR, dateTime.year)
+        calendar.set(Calendar.HOUR_OF_DAY, dateTime.hour)
+        calendar.set(Calendar.MINUTE, dateTime.minute)
+        calendar.set(Calendar.SECOND, 0)
+        calendar.set(Calendar.MILLISECOND, 0)
 
+        return Timestamp(calendar.time)
+    }
 
 }
