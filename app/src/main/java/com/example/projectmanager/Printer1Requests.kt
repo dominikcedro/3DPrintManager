@@ -3,7 +3,11 @@ package com.example.projectmanager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +26,22 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_requests)
+        val spinnerSort = findViewById<Spinner>(R.id.spinner_sort)
+
+// Create an ArrayAdapter using the custom spinner item layout
+val adapter = ArrayAdapter.createFromResource(
+    this,
+    R.array.sort_array,
+    R.layout.spinner_item
+)
+
+// Specify the layout to use when the list of choices appears
+adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+
+// Apply the adapter to the spinner
+spinnerSort.adapter = adapter
+
+
         lateinit var requestsRecyclerView: RecyclerView
         lateinit var requestsAdapter: Requests_RecyclerViewAdapter
 
@@ -32,37 +52,95 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
 
         makeText(this, "Fetching data...", Toast.LENGTH_SHORT).show()
 
-        db.collection("requests")
-            .get()
-            .addOnSuccessListener { result ->
-                val requests = ArrayList<RequestModel>()
-                for (document in result) {
-                    val author = document.getString("author")
-                    val subject = document.getString("subject")
-                    val startDate = document.getString("startDate")
-                    val starTime = document.getString("startTime")
-                    val endDate = document.getString("endDate")
-                    val endTime = document.getString("endTime")
-                    val filament = document.getString("filament")
-                    val startDateTime = document.get("startDateTime")
-                    val endDateTime = document.get("endDateTime")
-                    val currentDate = document.getTimestamp("postDate")
-                    val startDateTimestamp = document.getTimestamp("startTimestamp")
+//        db.collection("requests")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                val requests = ArrayList<RequestModel>()
+//                for (document in result) {
+//                    val author = document.getString("author")
+//                    val subject = document.getString("subject")
+//                    val startDate = document.getString("startDate")
+//                    val starTime = document.getString("startTime")
+//                    val endDate = document.getString("endDate")
+//                    val endTime = document.getString("endTime")
+//                    val filament = document.getString("filament")
+//                    val startDateTime = document.get("startDateTime")
+//                    val endDateTime = document.get("endDateTime")
+//                    val currentDate = document.getTimestamp("postDate")
+//                    val startDateTimestamp = document.getTimestamp("startTimestamp")
+//
+//
+//                    val request = RequestModel(author, subject, startDate, endDate, starTime,
+//                        endTime, filament, startDateTime, endDateTime, currentDate, startDateTimestamp)
+//                    requests.add(request)
+//                }
+//                requests.sortBy { it.postDate }
+//                requestsAdapter.dataSet = requests
+//                requestsAdapter.notifyDataSetChanged()
+//            }
+//            .addOnFailureListener { exception ->
+//                makeText(this, "Error getting documents.", Toast.LENGTH_SHORT).show()
+//            }
+        // when spinnerSort is selected delete all requests and fetch new ones
+        spinnerSort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val sortOption = parent.getItemAtPosition(position).toString()
 
-
-                    val request = RequestModel(author, subject, startDate, endDate, starTime,
-                        endTime, filament, startDateTime, endDateTime, currentDate, startDateTimestamp)
-                    requests.add(request)
-                }
-                requests.sortBy { it.postDate }
-                requestsAdapter.dataSet = requests
+                // Clear the requests
+                requestsAdapter.dataSet.clear()
                 requestsAdapter.notifyDataSetChanged()
-            }
-            .addOnFailureListener { exception ->
-                makeText(this, "Error getting documents.", Toast.LENGTH_SHORT).show()
+
+                // Fetch the requests again
+                db.collection("requests")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        val requests = ArrayList<RequestModel>()
+                        for (document in result) {
+                            val author = document.getString("author")
+                            val subject = document.getString("subject")
+                            val startDate = document.getString("startDate")
+                            val starTime = document.getString("startTime")
+                            val endDate = document.getString("endDate")
+                            val endTime = document.getString("endTime")
+                            val filament = document.getString("filament")
+                            val startDateTime = document.get("startDateTime")
+                            val endDateTime = document.get("endDateTime")
+                            val currentDate = document.getTimestamp("postDate")
+                            val startDateTimestamp = document.getTimestamp("startTimestamp")
+
+                            val request = RequestModel(
+                                author,
+                                subject,
+                                startDate,
+                                endDate,
+                                starTime,
+                                endTime,
+                                filament,
+                                startDateTime,
+                                endDateTime,
+                                currentDate,
+                                startDateTimestamp
+                            )
+                            requests.add(request)
+                        }
+
+                        // Sort the requests based on the selected option
+                        if (sortOption == "Sort by Post Date") {
+                            requests.sortBy { it.postDate }
+                        } else if (sortOption == "Sort by Start Date Timestamp") {
+                            requests.sortBy { it.startTimestamp }
+                        }
+
+                        // Update the adapter
+                        requestsAdapter.dataSet = requests
+                        requestsAdapter.notifyDataSetChanged()
+                    }
             }
 
-
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Another interface callback
+            }
+        }
         val addRequestButton = findViewById<Button>(R.id.addRequestButton)
         addRequestButton.setOnClickListener(){
             val intent = Intent(this@Printer1Requests, CreateNewRequest::class.java)

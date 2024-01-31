@@ -7,12 +7,24 @@
     android:background="@color/DarkBackgroundColor"
     tools:context=".Printer1Requests">
 
+    <Spinner
+        android:id="@+id/spinner_sort"
+        android:layout_width="157dp"
+        android:layout_height="34dp"
+        android:background="@drawable/section_field_color"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/DarkBasicTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Printer1RequestsButton" />
+
     <Button
         android:id="@+id/Printer1RequestsButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="22dp"
         android:backgroundTint="@color/DarkFrontColor"
         android:text="Printer Requests"
@@ -23,30 +35,26 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/requestsRecyclerView1"
-        app:cardBackgroundColor="@android:color/transparent"
         android:layout_width="408dp"
         android:layout_height="500dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/addRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Printer1RequestsButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/addRequestButton"
         android:layout_width="247dp"
         android:layout_height="72dp"
         android:layout_marginStart="82dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="82dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/DarkSpecialColor"
         android:text="add request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requestsRecyclerView1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/detailsFragmentContainer"
@@ -55,6 +63,7 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

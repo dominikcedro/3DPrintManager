@@ -16,5 +16,8 @@
     <string name="lbStatus"><u>Status</u></string>
     <string name="lbPrinter"><u>Printer</u></string>
     <string name="lbDuration"><u>Duration</u></string>
-
+    <string-array name="sort_array">
+        <item>Sort by Post Date</item>
+        <item>Sort by Start Date Timestamp</item>
+    </string-array>
 </resources>
