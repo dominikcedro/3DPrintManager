@@ -12,7 +12,9 @@ import com.example.projectmanager.DatePickFragment.RequestDetailsFragment
 import com.example.projectmanager.RequestsDayRecycler.RequestModel
 import com.example.projectmanager.RequestsDayRecycler.Requests_RecyclerViewAdapter
 import com.google.firebase.Firebase
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.firestore
+
 
 class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnItemClickListener {
     val db = Firebase.firestore
@@ -44,12 +46,20 @@ class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnIte
                     val filament = document.getString("filament")
                     val startDateTime = document.get("startDateTime")
                     val endDateTime = document.get("endDateTime")
-                    val request = RequestModel(subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime, author)
+                    val currentDate = document.getTimestamp("postDate")
+
+
+                    val request = RequestModel(author, subject, startDate, endDate, starTime, endTime, filament, startDateTime, endDateTime, currentDate)
                     requests.add(request)
                 }
+                requests.sortBy { it.postDate }
                 requestsAdapter.dataSet = requests
                 requestsAdapter.notifyDataSetChanged()
             }
+            .addOnFailureListener { exception ->
+                makeText(this, "Error getting documents.", Toast.LENGTH_SHORT).show()
+            }
+
 
         val addRequestButton = findViewById<Button>(R.id.addRequestButton)
         addRequestButton.setOnClickListener(){

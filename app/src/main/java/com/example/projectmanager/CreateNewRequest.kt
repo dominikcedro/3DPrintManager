@@ -17,6 +17,7 @@ import com.example.projectmanager.RequestsDayRecycler.RequestModel
 import com.example.projectmanager.TimePickFragment.OnTimeChosenListener
 import com.example.projectmanager.TimePickFragment.TimePickFragment
 import com.google.firebase.Firebase
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 
@@ -164,8 +165,9 @@ class CreateNewRequest : AppCompatActivity() {
                     val endDate = requestEndDate.text.toString()
                     val endTime = requestEndTime.text.toString()
                     val filament = requestFilament.text.toString()
+                    val currentTimestamp = Timestamp.now()
 
-                    val request = RequestModel(subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime,name)
+                    val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp)
                     db.collection("requests")
                         .document()
                         .set(request)

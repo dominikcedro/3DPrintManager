@@ -1,6 +1,7 @@
 package com.example.projectmanager.RequestsDayRecycler
 
 import com.example.projectmanager.DateTimeOperation.DateTime
+import com.google.firebase.Timestamp
 
 class RequestModel {
     var author: String? = null
@@ -12,11 +13,12 @@ class RequestModel {
     var filament: String? = null
     var startDateTime: Any? = null
     var endDateTime: Any? = null
+    var postDate: Timestamp? = null
 
     constructor(
-        subject: String?, startDate: String?, endDate: String?,
-        startTime: String?, endTime: String?, filament: String?,
-        startDateTime: Any?, endDateTime: Any?, author: String?
+        author: String?, subject: String?, startDate: String?, endDate: String?,
+        startTime: String?, endTime: String?, filament: String?, startDateTime: Any?,
+        endDateTime: Any?, postDate: Timestamp?
     ) {
         this.author = author
         this.subject = subject
@@ -27,5 +29,7 @@ class RequestModel {
         this.filament = filament
         this.startDateTime = startDateTime
         this.endDateTime = endDateTime
-}
+        this.postDate = postDate
+
+    }
 }
