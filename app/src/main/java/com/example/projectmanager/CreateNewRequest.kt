@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -20,6 +21,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
+import io.grpc.Context
 import java.util.Calendar
 
 class CreateNewRequest : AppCompatActivity() {
@@ -67,6 +69,7 @@ class CreateNewRequest : AppCompatActivity() {
 
         // start date picking
         requestStartDate.setOnClickListener {
+            hideKeyboard()
             val datePickFragment = DatePickFragment()
             datePickFragment.onDateChosenListener = object : OnDateChosenListener {
                 override fun onDateChosen(day: Int, month: Int, year: Int) {
@@ -81,6 +84,7 @@ class CreateNewRequest : AppCompatActivity() {
 
         // start time picking
         requestStartTime.setOnClickListener {
+            hideKeyboard()
             val timePickFragment = TimePickFragment()
             timePickFragment.onTimeChosenListener = object : OnTimeChosenListener {
                 override fun onTimeChosen(hour: Int, minute: Int) {
@@ -99,6 +103,7 @@ class CreateNewRequest : AppCompatActivity() {
 
         // end date picking
         requestEndDate.setOnClickListener {
+            hideKeyboard()
             val datePickFragment = DatePickFragment()
             datePickFragment.onDateChosenListener = object : OnDateChosenListener {
                 override fun onDateChosen(day: Int, month: Int, year: Int) {
@@ -113,6 +118,7 @@ class CreateNewRequest : AppCompatActivity() {
 
         // end time picking
         requestEndTime.setOnClickListener {
+            hideKeyboard()
             val timePickFragment = TimePickFragment()
             timePickFragment.onTimeChosenListener = object : OnTimeChosenListener {
                 override fun onTimeChosen(hour: Int, minute: Int) {
@@ -251,6 +257,13 @@ class CreateNewRequest : AppCompatActivity() {
         calendar.set(Calendar.MILLISECOND, 0)
 
         return Timestamp(calendar.time)
+    }
+    private fun hideKeyboard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 
 }
