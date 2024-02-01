@@ -9,10 +9,11 @@
 
     <Spinner
         android:id="@+id/spinner_sort"
-        android:layout_width="157dp"
-        android:layout_height="34dp"
+        android:layout_width="313dp"
+        android:layout_height="47dp"
         android:background="@drawable/section_field_color"
         android:spinnerMode="dropdown"
+        android:textAlignment="center"
         android:textColor="@color/DarkBasicTextColor"
         app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,13 +31,15 @@
         android:text="Printer Requests"
         app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/requestsRecyclerView1"
-        android:layout_width="408dp"
-        android:layout_height="500dp"
+        android:layout_width="402dp"
+        android:layout_height="510dp"
         android:layout_marginBottom="8dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/addRequestButton"
@@ -58,12 +61,13 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/detailsFragmentContainer"
-        android:layout_width="411dp"
-        android:layout_height="712dp"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/spinner_sort" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

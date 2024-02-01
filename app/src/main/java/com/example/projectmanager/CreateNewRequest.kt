@@ -21,7 +21,6 @@ import com.google.firebase.Firebase
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
-import io.grpc.Context
 import java.util.Calendar
 
 class CreateNewRequest : AppCompatActivity() {
@@ -90,16 +89,12 @@ class CreateNewRequest : AppCompatActivity() {
                 override fun onTimeChosen(hour: Int, minute: Int) {
                     val timeString = "$hour:$minute"
                     requestStartTime.setText(timeString)
-
-
                 }
             }
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, timePickFragment)
                 .commit()
         }
-
-
 
         // end date picking
         requestEndDate.setOnClickListener {
@@ -130,8 +125,6 @@ class CreateNewRequest : AppCompatActivity() {
                 .replace(R.id.fragmentContainer, timePickFragment)
                 .commit()
         }
-
-
 
         buttonCreateRequest.setOnClickListener {
             // proceed only if dateTimeCorrect is true
@@ -174,17 +167,41 @@ class CreateNewRequest : AppCompatActivity() {
                     val filament = requestFilament.text.toString()
                     val currentTimestamp = Timestamp.now()
                     val startTimestamp = if (startDateTime != null) dateTimeToTimestamp(startDateTime) else null
+                    val endTimestamp = if (endDateTime != null) dateTimeToTimestamp(endDateTime) else null
 
-
-                    val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp, startTimestamp)
                     db.collection("requests")
-                        .document()
-                        .set(request)
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Request created successfully", Toast.LENGTH_SHORT).show()
+                        .get()
+                        .addOnSuccessListener { result ->
+                            for (document in result) {
+                                val startExisting = document.getTimestamp("startTimestamp")
+                                val endExisting = document.getTimestamp("endTimestamp")
+
+                                // Check for overlap
+                                if (startExisting != null) {
+                                    if ((startTimestamp!! in startExisting..endExisting) || (endTimestamp!! in startExisting..endExisting)) {
+                                        Toast.makeText(this, "The request overlaps with an existing request.", Toast.LENGTH_SHORT).show()
+                                        return@addOnSuccessListener
+                                    }
+                                }
+                            }
+
+                            // If no overlap, create the new request
+                            val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp, startTimestamp, endTimestamp)
+
+                            db.collection("requests")
+                                .add(request)
+                                .addOnSuccessListener { documentReference ->
+                                    Toast.makeText(this, "Request created successfully.", Toast.LENGTH_SHORT).show()
+                                    finish()
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(this, "Error adding request.", Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                        .addOnFailureListener { exception ->
+                            Toast.makeText(this, "Error getting existing requests.", Toast.LENGTH_SHORT).show()
                         }
                 }
-            finish()
         }
     }
     fun isSubjectValid(): Boolean {
@@ -265,5 +282,12 @@ class CreateNewRequest : AppCompatActivity() {
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
+}
+
+private operator fun Unit.contains(startTimestamp: Timestamp): Boolean {
+    return true
+}
+
+private operator fun Timestamp.rangeTo(endExisting: Timestamp?) {
 
 }

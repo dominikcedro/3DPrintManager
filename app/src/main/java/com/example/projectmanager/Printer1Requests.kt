@@ -107,7 +107,7 @@ spinnerSort.adapter = adapter
                             val endDateTime = document.get("endDateTime")
                             val currentDate = document.getTimestamp("postDate")
                             val startDateTimestamp = document.getTimestamp("startTimestamp")
-
+                            val endDateTimestamp = document.getTimestamp("endTimestamp")
                             val request = RequestModel(
                                 author,
                                 subject,
@@ -119,16 +119,17 @@ spinnerSort.adapter = adapter
                                 startDateTime,
                                 endDateTime,
                                 currentDate,
-                                startDateTimestamp
+                                startDateTimestamp,
+                                endDateTimestamp
                             )
                             requests.add(request)
                         }
 
                         // Sort the requests based on the selected option
-                        if (sortOption == "Sort by Post Date") {
-                            requests.sortBy { it.postDate }
-                        } else if (sortOption == "Sort by Start Date Timestamp") {
+                        if (sortOption == "Sort by Start Date") {
                             requests.sortBy { it.startTimestamp }
+                        } else if (sortOption == "Sort by Post Date") {
+                            requests.sortBy { it.postDate }
                         }
 
                         // Update the adapter
