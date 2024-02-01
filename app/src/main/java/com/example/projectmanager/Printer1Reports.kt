@@ -15,12 +15,12 @@ import com.example.projectmanager.CommentsRecycler.Comments_RecyclerViewAdapter
 import com.example.projectmanager.Firestore.CommentData
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class Printer1Reports : AppCompatActivity() {
-    val db = Firebase.firestore
+    val db = FirebaseFirestore.getInstance()
 
     @SuppressLint("NewApi", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +34,12 @@ class Printer1Reports : AppCompatActivity() {
         commentsAdapter = Comments_RecyclerViewAdapter(ArrayList<CommentModel>())
         commentsRecyclerView.adapter = commentsAdapter
 
-
         Toast.makeText(this, "Fetching data...", Toast.LENGTH_SHORT).show()
 
-        // get comments from firestore
         db.collection("comments")
             .get()
             .addOnSuccessListener { result ->
-//                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
                 val comments = ArrayList<CommentModel>()
                 for (document in result) {
                     val printer = document.getString("printer")
@@ -49,15 +47,15 @@ class Printer1Reports : AppCompatActivity() {
                     val name = document.getString("username")
                     val mail = document.getString("email")
                     val comment = document.getString("comment")
-                    val likes = document.getLong("likes")?.toInt()
-                    val commentModel = CommentModel(printer, date, name, mail, comment, likes)
+                    val likes = document.get("likes") as? List<String>
+                    val likesList = likes?.toMutableList() ?: mutableListOf()
+                    val id = document.id
+                    val commentModel = CommentModel(id, printer, date, name, mail, comment, likesList)
                     comments.add(commentModel)
                 }
                 comments.sortWith(compareBy { it.date })
                 commentsAdapter.dataSet = comments
                 commentsAdapter.notifyDataSetChanged()
-
-
             }
 
 
@@ -100,7 +98,7 @@ class Printer1Reports : AppCompatActivity() {
             db.collection("comments")
                 .get()
                 .addOnSuccessListener { result ->
-//                Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Data fetched successfully", Toast.LENGTH_SHORT).show()
                     val comments = ArrayList<CommentModel>()
                     for (document in result) {
                         val printer = document.getString("printer")
@@ -108,20 +106,20 @@ class Printer1Reports : AppCompatActivity() {
                         val name = document.getString("username")
                         val mail = document.getString("email")
                         val comment = document.getString("comment")
-                        val likes = document.getLong("likes")?.toInt()
-                        val commentModel = CommentModel(printer, date, name, mail, comment, likes)
+                        val likes = document.get("likes") as? List<String>
+                        val likesList = likes?.toMutableList() ?: mutableListOf()
+                        val id = document.id
+                        val commentModel = CommentModel(id, printer, date, name, mail, comment, likesList)
                         comments.add(commentModel)
                     }
                     comments.sortWith(compareBy { it.date })
                     commentsAdapter.dataSet = comments
                     commentsAdapter.notifyDataSetChanged()
-
-
                 }
             commentText.text.clear()
 
-            }
+        }
         // create array of comments type is CommentModel
 
         // function to set
-}}
+    }}
