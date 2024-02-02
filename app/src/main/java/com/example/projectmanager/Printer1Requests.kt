@@ -97,6 +97,7 @@ spinnerSort.adapter = adapter
                         val requests = ArrayList<RequestModel>()
                         for (document in result) {
                             val author = document.getString("author")
+                            val email = document.getString("email")
                             val subject = document.getString("subject")
                             val startDate = document.getString("startDate")
                             val starTime = document.getString("startTime")
@@ -110,6 +111,7 @@ spinnerSort.adapter = adapter
                             val endDateTimestamp = document.getTimestamp("endTimestamp")
                             val request = RequestModel(
                                 author,
+                                email,
                                 subject,
                                 startDate,
                                 endDate,

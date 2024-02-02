@@ -95,7 +95,7 @@
                 android:layout_marginBottom="4dp"
 
                 android:backgroundTint="@color/DarkSpecialColor"
-                android:text="remind me!"
+                android:text="contact author"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 

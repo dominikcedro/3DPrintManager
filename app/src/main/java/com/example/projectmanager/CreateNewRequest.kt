@@ -177,7 +177,6 @@ class CreateNewRequest : AppCompatActivity() {
                                 val endExisting = document.getTimestamp("endTimestamp")
 
                                 // Check for overlap
-                                // Check for overlap
                                 if (startExisting != null && endExisting != null) {
                                     if ((startTimestamp!! >= startExisting && startTimestamp < endExisting) ||
                                         (endTimestamp!! > startExisting && endTimestamp <= endExisting)) {
@@ -188,7 +187,7 @@ class CreateNewRequest : AppCompatActivity() {
                             }
 
                             // If no overlap, create the new request
-                            val request = RequestModel(name, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp, startTimestamp, endTimestamp)
+                            val request = RequestModel(name,email, subject, startDate, endDate, startTime, endTime, filament, startDateTime, endDateTime, currentTimestamp, startTimestamp, endTimestamp)
 
                             db.collection("requests")
                                 .add(request)

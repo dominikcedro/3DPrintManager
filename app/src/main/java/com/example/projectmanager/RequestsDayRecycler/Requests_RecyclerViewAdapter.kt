@@ -1,6 +1,8 @@
 package com.example.projectmanager.RequestsDayRecycler
 
 import android.content.ContextWrapper
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectmanager.DatePickFragment.RequestDetailsFragment
 import com.example.projectmanager.R
@@ -23,6 +26,7 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>,
         val requestEndDate: TextView = view.findViewById(R.id.tvRequestEnd)
         val detailsButton: Button = view.findViewById<Button>(R.id.detailsButton)
         val requestAuthor: TextView = view.findViewById(R.id.tvAuthor)
+        val reminderButton: Button = view.findViewById(R.id.reminderButton)
 
         init {
             detailsButton.setOnClickListener(this)
@@ -57,6 +61,21 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>,
         holder.requestEndDate.text = request.endDate
         holder.detailsButton.text = "More details"
         holder.requestAuthor.text = request.author
+        holder.reminderButton.setOnClickListener {
+// In your RecyclerView adapter
+                val email = request.email // Replace with the user's email
+                val subject = "Reminder from PrinterRequests"
+                val body = "This is a reminder regarding your request for the 3D printer."
+
+                val uri = Uri.parse("mailto:$email")
+                    .buildUpon()
+                    .appendQueryParameter("subject", subject)
+                    .appendQueryParameter("body", body)
+                    .build()
+
+                val emailIntent = Intent(Intent.ACTION_SENDTO, uri)
+                startActivity(emailIntent)
+            }
         holder.detailsButton.setOnClickListener {
 
             val bundle = Bundle().apply {
@@ -84,5 +103,9 @@ class Requests_RecyclerViewAdapter(var dataSet: ArrayList<RequestModel>,
                 context = context.baseContext
             }
         }
+    }
+
+    private fun startActivity(emailIntent: Intent) {
+
     }
 }

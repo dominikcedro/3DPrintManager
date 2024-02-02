@@ -5,6 +5,7 @@ import com.google.firebase.Timestamp
 
 class RequestModel {
     var author: String? = null
+    var email: String? = null
     var subject: String? = null
     var startDate: String? = null
     var startTime: String? = null
@@ -18,11 +19,12 @@ class RequestModel {
     var endTimestamp: Timestamp? = null
 
     constructor(
-        author: String?, subject: String?, startDate: String?, endDate: String?,
+        author: String?,email:String?, subject: String?, startDate: String?, endDate: String?,
         startTime: String?, endTime: String?, filament: String?, startDateTime: Any?,
         endDateTime: Any?, postDate: Timestamp?, startTimestamp: Timestamp?, endTimestamp: Timestamp?
     ) {
         this.author = author
+        this.email = email
         this.subject = subject
         this.startDate = startDate
         this.endDate = endDate
