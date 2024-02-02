@@ -14,8 +14,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:text="Printer Choice Menu"
         android:backgroundTint="@color/DarkFrontColor"
+        android:text="Printer Choice Menu"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,8 +29,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="185dp"
         android:layout_marginEnd="25dp"
-        android:text="Pick Ultimaker 2+"
         android:backgroundTint="@color/DarkSpecialColor"
+        android:text="Pick Ultimaker 2+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +44,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:text="More printers coming soon!"
         android:backgroundTint="@color/DarkFrontColor"
+        android:text="More printers coming soon!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,5 +67,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Printer_2"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/helloUser"
+        android:layout_width="367dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="39dp"
+        android:background="@drawable/section_field_color"
+        android:gravity="center"
+        android:text="Hello!"
+        android:textColor="@color/DarkBasicTextColor"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Printer_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuPrinterChoiceButton"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
