@@ -26,8 +26,8 @@
 
             <TextView
                 android:id="@+id/commentBody"
-                android:layout_width="368dp"
-                android:layout_height="51dp"
+                android:layout_width="366dp"
+                android:layout_height="62dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:text="Comment body"
@@ -38,7 +38,7 @@
 
             <TextView
                 android:id="@+id/commentDate"
-                android:layout_width="104dp"
+                android:layout_width="142dp"
                 android:layout_height="31dp"
                 android:layout_marginEnd="24dp"
                 android:text="Date of comment"
@@ -49,8 +49,8 @@
 
             <TextView
                 android:id="@+id/commentAuthor"
-                android:layout_width="213dp"
-                android:layout_height="29dp"
+                android:layout_width="185dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="24dp"
                 android:text="Author of the comment"
                 android:textColor="@color/DarkBasicTextColor"
@@ -59,11 +59,11 @@
 
             <Button
                 android:id="@+id/likeButton"
-                android:layout_width="57dp"
-                android:layout_height="49dp"
+                android:layout_width="56dp"
+                android:layout_height="42dp"
                 android:layout_marginStart="2dp"
-                android:text="+"
                 android:backgroundTint="@color/DarkSpecialColor"
+                android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/commentBody" />
