@@ -177,8 +177,10 @@ class CreateNewRequest : AppCompatActivity() {
                                 val endExisting = document.getTimestamp("endTimestamp")
 
                                 // Check for overlap
-                                if (startExisting != null) {
-                                    if ((startTimestamp!! in startExisting..endExisting) || (endTimestamp!! in startExisting..endExisting)) {
+                                // Check for overlap
+                                if (startExisting != null && endExisting != null) {
+                                    if ((startTimestamp!! >= startExisting && startTimestamp < endExisting) ||
+                                        (endTimestamp!! > startExisting && endTimestamp <= endExisting)) {
                                         Toast.makeText(this, "The request overlaps with an existing request.", Toast.LENGTH_SHORT).show()
                                         return@addOnSuccessListener
                                     }
