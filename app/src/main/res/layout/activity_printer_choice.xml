@@ -59,11 +59,9 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="64dp"
-        android:text="More printers coming soon!"
         android:backgroundTint="@color/DarkFrontColor"
+        android:text="More printers coming soon!"
 
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
