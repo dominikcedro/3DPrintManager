@@ -18,6 +18,6 @@
     <string name="lbDuration"><u>Duration</u></string>
     <string-array name="sort_array">
         <item>Sort by Post Date</item>
-        <item>Sort by Start Date Timestamp</item>
+        <item>Sort by Start Date</item>
     </string-array>
 </resources>
