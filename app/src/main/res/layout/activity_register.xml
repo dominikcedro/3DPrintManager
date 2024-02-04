@@ -27,7 +27,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="11dp"
         android:text="Password should be at least 6 characters long and include special character. Please try not to forget it!"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         android:textAlignment="center"
         android:gravity="center"
         android:background="@drawable/section_field_color"
@@ -44,9 +44,11 @@
         android:layout_marginEnd="46dp"
         android:ems="10"
         android:hint="Your student email:"
+        android:background="@drawable/section_field_color"
+
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/DarkBasicTextColor"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColorHint="@color/textColorTheme1"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
@@ -61,8 +63,10 @@
         android:ems="10"
         android:hint="Your password"
         android:inputType="textPassword"
-        android:textColorHint="@color/DarkBasicTextColor"
-        android:textColor="@color/DarkBasicTextColor"
+        android:background="@drawable/section_field_color"
+
+        android:textColorHint="@color/textColorTheme1"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
@@ -76,9 +80,11 @@
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="Repeat password"
+        android:background="@drawable/section_field_color"
+
         android:inputType="textPassword"
-        android:textColorHint="@color/DarkBasicTextColor"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColorHint="@color/textColorTheme1"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword1" />
@@ -93,8 +99,9 @@
         android:ems="10"
         android:hint="Your name/ nickname"
         android:inputType="text"
-        android:textColorHint="@color/DarkBasicTextColor"
-        android:textColor="@color/DarkBasicTextColor"
+        android:background="@drawable/section_field_color"
+        android:textColorHint="@color/textColorTheme1"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -107,7 +114,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/DarkSpecialColor"
+        android:backgroundTint="@color/colorAccentTheme1"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +129,7 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="66dp"
         android:text="I agree, that Dominik is a good programmer"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword2" />
@@ -132,6 +139,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
+        android:background="@drawable/section_field_color"
+
         android:layout_marginTop="8dp"
         android:layout_marginEnd="183dp"
         app:layout_constraintEnd_toEndOf="parent"

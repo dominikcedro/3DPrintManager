@@ -14,7 +14,7 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:backgroundTint="@color/DarkFrontColor"
+        android:backgroundTint="@color/colorPrimaryTheme1"
         android:text="Printer Choice Menu"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,20 +22,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/spinner_theme"
+        android:layout_width="313dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/section_field_color"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/textColorTheme1"
+        app:layout_constraintBottom_toTopOf="@+id/Printer_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/Printer_1"
         android:layout_width="369dp"
         android:layout_height="100dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="185dp"
         android:layout_marginEnd="25dp"
-        android:backgroundTint="@color/DarkSpecialColor"
+        android:backgroundTint="@color/colorAccentTheme1"
         android:text="Pick Ultimaker 2+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuPrinterChoiceButton"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="275dp" />
 
     <Button
         android:id="@+id/Printer_2"
@@ -44,7 +56,7 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:backgroundTint="@color/DarkFrontColor"
+        android:backgroundTint="@color/colorPrimaryTheme1"
         android:text="More printers coming soon!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,7 +71,7 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
-        android:backgroundTint="@color/DarkFrontColor"
+        android:backgroundTint="@color/colorPrimaryTheme1"
         android:text="More printers coming soon!"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,12 +89,12 @@
         android:background="@drawable/section_field_color"
         android:gravity="center"
         android:text="Hello!"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Printer_1"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_sort"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuPrinterChoiceButton"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/menuPrinterChoiceButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.ThemeFrog)
         setContentView(R.layout.activity_login)
 
         val userEmail = findViewById<EditText>(R.id.enter_email_login)

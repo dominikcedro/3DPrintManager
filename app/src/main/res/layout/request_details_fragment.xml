@@ -18,7 +18,7 @@
         android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestAuthor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbSubject"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         android:paddingLeft="10dp"
 
         app:layout_constraintBottom_toTopOf="@+id/tvRequestSubject"
@@ -46,7 +46,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbAuthor"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestAuthor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,7 +59,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbFilament"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestFilament"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,7 +72,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbStartTime"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
 
         app:layout_constraintBottom_toTopOf="@+id/tvRequestStartTime"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbEndDate"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestEndDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -99,7 +99,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbEndTime"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestEndTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -112,7 +112,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbStartDate"
-        android:textColor="@color/DarkSpecialColor"
+        android:textColor="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -130,7 +130,7 @@
         android:paddingLeft="10dp"
 
         android:gravity="center_vertical"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestSubject" />
@@ -145,7 +145,7 @@
         android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestFilament" />
 
@@ -160,7 +160,7 @@
         android:paddingLeft="10dp"
 
         android:text="STR DAY"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestFilament" />
 
@@ -176,7 +176,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
 
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
         android:paddingLeft="10dp"
 
         android:gravity="center_vertical"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestStartTime" />
 
@@ -208,7 +208,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
 
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestStartTime" />
 
@@ -224,7 +224,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
 
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -237,9 +237,9 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="105dp"
-        android:backgroundTint="@color/DarkSpecialColor"
+        android:backgroundTint="@color/colorAccentTheme1"
         android:text="Close window"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -256,7 +256,7 @@
         android:background="@drawable/section_field_color"
         android:paddingLeft="10dp"
         android:gravity="center_vertical"
-        android:textColor="@color/DarkBasicTextColor"
+        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

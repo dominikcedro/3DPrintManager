@@ -2,18 +2,51 @@
 <resources>
 
     <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/DarkFrontColor</item>
-        <item name="android:textColorPrimary">@color/DarkBasicTextColor</item>
-        <item name="android:textColorSecondary">@color/DarkBasicTextColor</item>
+        <item name="colorAccent">@color/colorPrimaryTheme1</item>
+        <item name="android:textColorPrimary">@color/textColorTheme1</item>
+        <item name="android:textColorSecondary">@color/textColorTheme1</item>
 
     </style>
 
     <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-            <item name="colorAccent">@color/DarkFrontColor</item>
-        <item name="android:textColorPrimary">@color/DarkBasicTextColor</item>
-        <item name="android:textColorSecondary">@color/DarkBasicTextColor</item>
+            <item name="colorAccent">@color/colorPrimaryTheme1</item>
+        <item name="android:textColorPrimary">@color/textColorTheme1</item>
+        <item name="android:textColorSecondary">@color/textColorTheme1</item>
 
     </style>
+
+    <style name="textViewTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@drawable/section_field_color</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="ButtonThemeFrog" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/textColorFrog</item>
+        <item name="android:background">@drawable/special_button</item>
+    </style>
+
+    <!-- Themes 1 blue&orange -->
+    <style name="Theme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryTheme1</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme1</item>
+        <item name="colorAccent">@color/colorAccentTheme1</item>
+        <item name="android:textColor">@color/textColorTheme1</item>
+        <item name="android:windowBackground">@color/DarkBackgroundColor</item>
+        <item name="android:textColorHint">@color/textColorTheme1</item>
+    </style>
+    <!-- Themes 2 frog -->
+    <style name="ThemeFrog" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryFrog</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkFrog</item>
+        <item name="colorAccent">@color/colorAccentFrog</item>
+        <item name="android:textColor">@color/textColorFrog</item>
+        <item name="android:textColorHint">@color/textColorFrog</item>
+        <item name="android:windowBackground">@color/BackgroundColorFrog</item>
+    </style>
+
+
 
 
 
