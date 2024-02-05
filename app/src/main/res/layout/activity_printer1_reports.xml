@@ -3,18 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackgroundColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackgroundColor"
     tools:context=".Printer1Reports">
 
 
     <Button
+        style="@style/NormalButtonStyle"
         android:id="@+id/Printer1ReportsButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -22,7 +21,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/colorPrimaryTheme1"
         android:text="Printer Reports"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        style = "@style/textEditTheme"
         android:id="@+id/editTextComment"
         android:layout_width="337dp"
         android:layout_height="88dp"
@@ -39,15 +38,13 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="text"
-        android:textColor="@color/textColorTheme1"
-        android:paddingLeft="10dp"
-        android:background="@drawable/section_field_color"
         app:layout_constraintBottom_toTopOf="@+id/postTheComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
 
     <Button
+        style="@style/SpecialButtonStyle"
         android:id="@+id/postTheComment"
         android:layout_width="164dp"
         android:layout_height="58dp"
@@ -55,7 +52,6 @@
         android:layout_marginEnd="124dp"
         android:layout_marginBottom="24dp"
         android:text="post"
-        android:backgroundTint="@color/colorAccentTheme1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser
 class LoginActivity : AppCompatActivity() {
     private var lastClickTime: Long = 0
     private var clickCount: Int = 0
-    private val themes = listOf(R.style.Theme1, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
+    private val themes = listOf(R.style.ThemeBasic, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
     private var currentThemeIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

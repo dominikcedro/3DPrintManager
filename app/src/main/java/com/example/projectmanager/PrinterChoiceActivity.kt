@@ -12,14 +12,21 @@ import android.widget.TextView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
+import io.grpc.Context
 
 class PrinterChoiceActivity : AppCompatActivity() {
     val db = Firebase.firestore
-    @SuppressLint("MissingInflatedId")
+    private val themes = listOf(R.style.ThemeBasic, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
+    private var currentThemeIndex = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Retrieve the current theme index from SharedPreferences
+        val sharedPreferences = getSharedPreferences("ThemePref", android.content.Context.MODE_PRIVATE)
+        currentThemeIndex = sharedPreferences.getInt("themeIndex", 0)
+
+        // Apply the current theme
+        setTheme(themes[currentThemeIndex])
         super.onCreate(savedInstanceState)
-        // check theme to drog
-        setTheme(R.style.ThemeFrog)
 
         setContentView(R.layout.activity_printer_choice)
 

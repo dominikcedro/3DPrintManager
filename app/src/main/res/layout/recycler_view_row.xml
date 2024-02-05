@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-
         android:layout_width="391dp"
         android:layout_height="131dp"
         android:layout_marginStart="1dp"
@@ -20,54 +19,57 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@color/colorPrimaryTheme1"
-
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorBackgroundValent">
 
             <TextView
                 android:id="@+id/commentBody"
-                android:layout_width="366dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_width="375dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/section_field_color"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="Comment body"
-                android:textColor="@color/textColorTheme1"
+                android:textAlignment="viewStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/commentAuthor" />
 
             <TextView
                 android:id="@+id/commentDate"
-                android:layout_width="142dp"
-                android:layout_height="31dp"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/section_field_color"
                 android:paddingRight="8dp"
+                android:textAlignment="center"
                 android:text="Date of comment"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/textColorTheme1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/commentAuthor"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/commentAuthor"
-                android:layout_width="185dp"
+                android:layout_width="180dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="8dp"
+                android:background="@drawable/section_field_color"
                 android:paddingLeft="8dp"
                 android:text="Author of the comment"
                 android:textAlignment="viewStart"
-                android:textColor="@color/textColorTheme1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/likeButton"
-                android:layout_width="56dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="2dp"
+                android:layout_width="62dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/section_field_color"
                 android:backgroundTint="@color/colorAccentTheme1"
                 android:text="+"
+                android:textAlignment="viewStart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/commentBody" />
@@ -77,10 +79,9 @@
                 android:layout_width="52dp"
                 android:layout_height="41dp"
                 android:layout_marginStart="16dp"
-                android:gravity="center_vertical"
-                android:text="123"
+                android:background="@drawable/section_field_color"
                 android:textAlignment="center"
-                android:textColor="@color/textColorTheme1"
+                android:text="123"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/likeButton"

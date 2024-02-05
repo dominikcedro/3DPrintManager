@@ -6,7 +6,16 @@ import android.os.Bundle
 import android.widget.Button
 
 class Printer1MenuActivity : AppCompatActivity() {
+    private val themes = listOf(R.style.ThemeBasic, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
+    private var currentThemeIndex = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Retrieve the current theme index from SharedPreferences
+        val sharedPreferences = getSharedPreferences("ThemePref", android.content.Context.MODE_PRIVATE)
+        currentThemeIndex = sharedPreferences.getInt("themeIndex", 0)
+
+        // Apply the current theme
+        setTheme(themes[currentThemeIndex])
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_menu)
 

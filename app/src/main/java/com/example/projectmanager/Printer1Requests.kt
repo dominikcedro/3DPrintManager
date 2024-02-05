@@ -22,8 +22,16 @@ import com.google.firebase.firestore.firestore
 
 class Printer1Requests : AppCompatActivity(), Requests_RecyclerViewAdapter.OnItemClickListener {
     val db = Firebase.firestore
+    private val themes = listOf(R.style.ThemeBasic, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
+    private var currentThemeIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Retrieve the current theme index from SharedPreferences
+        val sharedPreferences = getSharedPreferences("ThemePref", android.content.Context.MODE_PRIVATE)
+        currentThemeIndex = sharedPreferences.getInt("themeIndex", 0)
+
+        // Apply the current theme
+        setTheme(themes[currentThemeIndex])
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_requests)
         val spinnerSort = findViewById<Spinner>(R.id.spinner_sort)

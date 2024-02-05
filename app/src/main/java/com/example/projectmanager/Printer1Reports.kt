@@ -21,9 +21,16 @@ import java.time.format.DateTimeFormatter
 
 class Printer1Reports : AppCompatActivity() {
     val db = FirebaseFirestore.getInstance()
+    private val themes = listOf(R.style.ThemeBasic, R.style.ThemeFrog, R.style.ThemeValent, R.style.ThemeFall)
+    private var currentThemeIndex = 0
 
-    @SuppressLint("NewApi", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Retrieve the current theme index from SharedPreferences
+        val sharedPreferences = getSharedPreferences("ThemePref", android.content.Context.MODE_PRIVATE)
+        currentThemeIndex = sharedPreferences.getInt("themeIndex", 0)
+
+        // Apply the current theme
+        setTheme(themes[currentThemeIndex])
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_printer1_reports)
         lateinit var commentsRecyclerView: RecyclerView

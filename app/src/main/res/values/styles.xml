@@ -37,13 +37,18 @@
         <item name="android:background">@drawable/section_middle_color</item>
     </style>
 
+    <style name="NormalButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:background">@drawable/section_field_color</item>
+    </style>
+
     <style name="logoButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:textColor">?attr/colorSecondary</item>
         <item name="android:background">@drawable/logo_button</item>
     </style>
 
     <!-- Themes 1 blue&orange -->
-    <style name="Theme1" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ThemeBasic" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryTheme1</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme1</item>

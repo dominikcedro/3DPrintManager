@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackgroundColor"
     tools:context=".Printer1MenuActivity">
 
     <Button
+        style="@style/NormalButtonStyle"
         android:id="@+id/printerNameButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -15,7 +15,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
         android:text="Printer Name"
-        android:backgroundTint="@color/colorPrimaryTheme1"
         app:layout_constraintBottom_toTopOf="@+id/menuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/NormalButtonStyle"
         android:id="@+id/menuButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -30,7 +30,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="16dp"
         android:text="Printer Menu"
-        android:backgroundTint="@color/colorPrimaryTheme1"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -39,6 +38,7 @@
 
 
     <Button
+        style="@style/SpecialButtonStyle"
         android:id="@+id/checkRequestButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -47,7 +47,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
         android:text="@string/check_requests"
-        android:backgroundTint="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/createRequestButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,6 +54,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
+        style="@style/SpecialButtonStyle"
+
         android:id="@+id/createRequestButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -63,7 +64,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
         android:text="@string/create_request"
-        android:backgroundTint="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/checkReportsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -71,6 +71,8 @@
         app:layout_constraintTop_toBottomOf="@+id/checkRequestButton" />
 
     <Button
+        style="@style/SpecialButtonStyle"
+
         android:id="@+id/checkReportsButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -79,7 +81,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
         android:text="@string/check_reports"
-        android:backgroundTint="@color/colorAccentTheme1"
         app:layout_constraintBottom_toTopOf="@+id/goPrinterChoiceButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -87,6 +88,8 @@
         app:layout_constraintTop_toBottomOf="@+id/createRequestButton" />
 
     <Button
+        style="@style/SpecialButtonStyle"
+
         android:id="@+id/goPrinterChoiceButton"
         android:layout_width="367dp"
         android:layout_height="58dp"
@@ -95,7 +98,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="32dp"
         android:text="@string/go_printer_choice"
-        android:backgroundTint="@color/colorAccentTheme1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

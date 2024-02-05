@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackgroundColor">
+    android:background="@color/colorBackgroundValent"
+    >
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestSubject"
         android:layout_width="288dp"
         android:layout_height="51dp"
@@ -15,10 +17,8 @@
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="32dp"
         android:text="subject"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestAuthor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbSubject"
-        android:textColor="@color/colorAccentTheme1"
+        android:textColor="?attr/colorAccent"
         android:paddingLeft="10dp"
 
         app:layout_constraintBottom_toTopOf="@+id/tvRequestSubject"
@@ -46,7 +46,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbAuthor"
-        android:textColor="@color/colorAccentTheme1"
+        android:textColor="?attr/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestAuthor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,7 +59,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="62dp"
         android:text="@string/lbFilament"
-        android:textColor="@color/colorAccentTheme1"
+        android:textColor="?attr/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/tvRequestFilament"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,7 +73,6 @@
         android:layout_marginEnd="62dp"
         android:text="@string/lbStartTime"
         android:textColor="@color/colorAccentTheme1"
-
         app:layout_constraintBottom_toTopOf="@+id/tvRequestStartTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -119,6 +118,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestAuthor"
         android:layout_width="287dp"
         android:layout_height="53dp"
@@ -126,45 +126,41 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="63dp"
         android:text="author"
-        android:background="@drawable/section_field_color"
         android:paddingLeft="10dp"
-
         android:gravity="center_vertical"
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestSubject" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestStart"
         android:layout_width="179dp"
         android:layout_height="51dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="32dp"
         android:text="date starts"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestFilament" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestDayStart"
         android:layout_width="96dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="60dp"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-
         android:text="STR DAY"
         android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestFilament" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestStartTime"
         android:layout_width="284dp"
         android:layout_height="49dp"
@@ -172,47 +168,41 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="66dp"
         android:text="time starts"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestStart" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestEndDate"
         android:layout_width="188dp"
         android:layout_height="48dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="32dp"
         android:text="date end"
-        android:background="@drawable/section_field_color"
         android:paddingLeft="10dp"
-
         android:gravity="center_vertical"
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestStartTime" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestDayEnd"
         android:layout_width="89dp"
         android:layout_height="49dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="64dp"
         android:text="END DAY"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestStartTime" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestEndTime"
         android:layout_width="285dp"
         android:layout_height="46dp"
@@ -220,24 +210,21 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="65dp"
         android:text="time end"
-        android:background="@drawable/section_field_color"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestEndDate" />
 
     <Button
+        style="@style/SpecialButtonStyle"
         android:id="@+id/btnConfirm"
         android:layout_width="201dp"
         android:layout_height="67dp"
         android:layout_marginStart="105dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="105dp"
-        android:backgroundTint="@color/colorAccentTheme1"
         android:text="Close window"
         android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -246,6 +233,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRequestEndTime" />
 
     <TextView
+        style="@style/textViewTheme"
         android:id="@+id/tvRequestFilament"
         android:layout_width="291dp"
         android:layout_height="56dp"
@@ -253,10 +241,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="59dp"
         android:text="filament"
-        android:background="@drawable/section_field_color"
         android:paddingLeft="10dp"
         android:gravity="center_vertical"
-        android:textColor="@color/textColorTheme1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

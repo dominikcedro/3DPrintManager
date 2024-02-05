@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackgroundColor"
     tools:context=".Printer1Requests">
+
+    <Button
+        android:id="@+id/Printer1RequestsButton"
+        style="@style/NormalButtonStyle"
+        android:layout_width="367dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        android:text="Printer Requests"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_sort"
@@ -15,61 +28,43 @@
         android:spinnerMode="dropdown"
         android:textAlignment="center"
         android:textColor="@color/textColorTheme1"
-        app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Printer1RequestsButton" />
-
-    <Button
-        android:id="@+id/Printer1RequestsButton"
-        android:layout_width="367dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="22dp"
-        android:backgroundTint="@color/colorPrimaryTheme1"
-        android:text="Printer Requests"
-        app:layout_constraintBottom_toTopOf="@+id/requestsRecyclerView1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/requestsRecyclerView1"
         android:layout_width="402dp"
         android:layout_height="510dp"
-        android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/addRequestButton"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sort" />
 
     <Button
         android:id="@+id/addRequestButton"
+        style="@style/SpecialButtonStyle"
         android:layout_width="247dp"
         android:layout_height="72dp"
         android:layout_marginStart="82dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="82dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/colorAccentTheme1"
         android:text="add request"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requestsRecyclerView1" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/detailsFragmentContainer"
         android:layout_width="402dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Printer1RequestsButton"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sort" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
