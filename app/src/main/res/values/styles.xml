@@ -12,17 +12,34 @@
             <item name="colorAccent">@color/colorPrimaryTheme1</item>
         <item name="android:textColorPrimary">@color/textColorTheme1</item>
         <item name="android:textColorSecondary">@color/textColorTheme1</item>
-
     </style>
 
     <style name="textViewTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:background">@drawable/section_field_color</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
         <item name="android:paddingLeft">10dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
     </style>
-    <style name="ButtonThemeFrog" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/textColorFrog</item>
-        <item name="android:background">@drawable/special_button</item>
+
+    <style name="textEditTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@drawable/section_field_color</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="SpecialButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:background">@drawable/section_middle_color</item>
+    </style>
+
+    <style name="logoButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:background">@drawable/logo_button</item>
     </style>
 
     <!-- Themes 1 blue&orange -->
@@ -34,16 +51,46 @@
         <item name="android:textColor">@color/textColorTheme1</item>
         <item name="android:windowBackground">@color/DarkBackgroundColor</item>
         <item name="android:textColorHint">@color/textColorTheme1</item>
+        <item name="android:textColorSecondary">@color/textColorTheme1</item>
     </style>
+
     <!-- Themes 2 frog -->
     <style name="ThemeFrog" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryFrog</item>
+        <item name="colorSecondary">@color/BackgroundColorFrog</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkFrog</item>
         <item name="colorAccent">@color/colorAccentFrog</item>
         <item name="android:textColor">@color/textColorFrog</item>
         <item name="android:textColorHint">@color/textColorFrog</item>
+        <item name="android:textColorHighlight">@color/BackgroundColorFrog</item>
         <item name="android:windowBackground">@color/BackgroundColorFrog</item>
+        <item name="android:textColorSecondary">@color/textColorFrog</item>
+
+    </style>
+
+    <!-- Themes 3 valentines <333333 -->
+    <style name="ThemeValent" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryValent</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccentValent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:windowBackground">@color/colorBackgroundValent</item>
+
+    </style>
+
+    <!-- Themes 4 fall_theme -->
+    <style name="ThemeFall" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryFall</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccentFall</item>
+        <item name="android:textColor">@color/textColorFall</item>
+        <item name="android:windowBackground">@color/colorBackgroundFall</item>
+
     </style>
 
 

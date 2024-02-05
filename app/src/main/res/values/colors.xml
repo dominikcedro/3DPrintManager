@@ -8,21 +8,28 @@
     <color name="colorPrimaryDarkTheme1">#18394E</color>
     <color name="colorAccentTheme1">#AD4D0C</color>
     <color name="textColorTheme1">#efefef</color>
-
     <color name="DarkExtraTextColor">#130D0D</color>
-    <!-- frog theme 3 colors-->
-    <color name="BackgroundColorFrog">#092635</color>
-    <color name="colorPrimaryFrog">#5C8374</color>
-    <color name="colorPrimaryDarkFrog">#1B4242</color>
-    <color name="colorAccentFrog">#9EC8B9</color>
-    <color name="textColorFrog">#000C0C</color>
 
-    <!-- coffe theme 2 colors-->
-    <color name="LightBackgroundColor"> #A7727D</color>
-    <color name="colorPrimaryTheme2">#F8EAD8</color>
-    <color name="colorPrimaryDarkTheme2">#EDDBC7</color>
-    <color name="colorAccentTheme2">#F9F5E7</color>
-    <color name="textColorTheme2">#0C0C0C</color>
+    <!-- frog theme 2 colors-->
+    <color name="BackgroundColorFrog">#D0E7D2</color>
+    <color name="colorPrimaryFrog">#79AC78</color>
+    <color name="colorPrimaryDarkFrog">#618264</color>
+    <color name="colorAccentFrog">#618264</color>
+    <color name="textColorFrog">#EAF5E5</color>
+
+    <!-- valentine theme 3 colors-->
+    <color name="colorBackgroundValent"> #FFE7E7</color>
+    <color name="colorPrimaryValent">#B47B84</color>
+    <color name="colorPrimaryDarkValent">#CAA6A6</color>
+    <color name="colorAccentValent">#944E63</color>
+    <color name="textColorValent">#0C0C0C</color>
+
+    <!-- valentine theme 3 colors-->
+    <color name="colorBackgroundFall"> #F3F0D1</color>
+    <color name="colorPrimaryFall">#E29C68</color>
+    <color name="colorPrimaryDarkFall">#E29C68</color>
+    <color name="colorAccentFall">#C85108</color>
+    <color name="textColorFall">#6B240C</color>
 
 
 

@@ -18,6 +18,9 @@ class PrinterChoiceActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // check theme to drog
+        setTheme(R.style.ThemeFrog)
+
         setContentView(R.layout.activity_printer_choice)
 
         val auth = FirebaseAuth.getInstance()
