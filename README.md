@@ -1,6 +1,14 @@
+<div align="center">
+
 # 3D Print Manager App
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW8yN3l0d3ZqbGs0eGt6ZzVkMDFzczk5aWZ6ZXBueGlveXcxcm5mYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lnd23r2VhqsJhSRyLT/giphy-downsized-large.gif)
+</div>
+
+
+<div align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW8yN3l0d3ZqbGs0eGt6ZzVkMDFzczk5aWZ6ZXBueGlveXcxcm5mYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lnd23r2VhqsJhSRyLT/giphy-downsized.gif" alt="Your GIF" style="max-width: 100%;" />
+</div>
+
 
 
 ## App that helps manage 3D printer among many people. It's meant to save your time.
