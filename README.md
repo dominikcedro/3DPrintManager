@@ -17,7 +17,7 @@
 
 * This project is my first big endeavour with Kotlin language.
 * App is meant to help me and my colleagues in scientific club "Bioaddmed" at Wrocław TECH.
-* It should run on android 11 or higher with connection to internet.
+* It should run on android 11 or higher with connection to internet
 
 ### Key features
 
