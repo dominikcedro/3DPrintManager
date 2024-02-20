@@ -11,11 +11,12 @@
     <color name="DarkExtraTextColor">#130D0D</color>
 
     <!-- frog theme 2 colors-->
-    <color name="BackgroundColorFrog">#D0E7D2</color>
-    <color name="colorPrimaryFrog">#79AC78</color>
+    <color name="BackgroundColorFrog">#CFE6D1</color>
+    <color name="colorPrimaryFrog">#487F78</color>
+    <color name="colorSecondaryFrog">#FEFEFE</color>
     <color name="colorPrimaryDarkFrog">#618264</color>
-    <color name="colorAccentFrog">#618264</color>
-    <color name="textColorFrog">#EAF5E5</color>
+    <color name="colorAccentFrog">#487F78</color>
+    <color name="textColorFrog">#487F78</color>
 
     <!-- valentine theme 3 colors-->
     <color name="colorBackgroundValent"> #FFE7E7</color>

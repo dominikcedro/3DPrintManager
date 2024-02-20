@@ -63,15 +63,13 @@
     <style name="ThemeFrog" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryFrog</item>
-        <item name="colorSecondary">@color/BackgroundColorFrog</item>
+        <item name="colorSecondary">@color/colorSecondaryFrog</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkFrog</item>
         <item name="colorAccent">@color/colorAccentFrog</item>
         <item name="android:textColor">@color/textColorFrog</item>
         <item name="android:textColorHint">@color/textColorFrog</item>
         <item name="android:textColorHighlight">@color/BackgroundColorFrog</item>
         <item name="android:windowBackground">@color/BackgroundColorFrog</item>
-        <item name="android:textColorSecondary">@color/textColorFrog</item>
-
     </style>
 
     <!-- Themes 3 valentines <333333 -->
